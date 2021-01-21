@@ -22,9 +22,9 @@
 
 package io.crate.plugin;
 
-import com.google.common.annotations.VisibleForTesting;
-import com.google.common.collect.ImmutableList;
 import io.crate.Plugin;
+import io.crate.common.annotations.VisibleForTesting;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.xbean.finder.ResourceFinder;
@@ -84,15 +84,15 @@ public class PluginLoader {
 
         Collection<Class<? extends Plugin>> implementations = findImplementations();
 
-        ImmutableList.Builder<Plugin> builder = ImmutableList.builder();
+        ArrayList<Plugin> loadedPlugins = new ArrayList<>();
         for (Class<? extends Plugin> pluginClass : implementations) {
             try {
-                builder.add(loadPlugin(pluginClass));
+                loadedPlugins.add(loadPlugin(pluginClass));
             } catch (Throwable t) {
                 logger.error("error loading plugin:  " + pluginClass.getSimpleName(), t);
             }
         }
-        plugins = builder.build();
+        plugins = Collections.unmodifiableList(loadedPlugins);
 
         if (logger.isInfoEnabled()) {
             logger.info("plugins loaded: {} ", plugins.stream().map(Plugin::name).collect(Collectors.toList()));

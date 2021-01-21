@@ -30,8 +30,6 @@ import java.util.function.UnaryOperator;
 
 import javax.annotation.Nullable;
 
-import com.google.common.collect.ImmutableList;
-
 import org.elasticsearch.action.bulk.BulkModule;
 import org.elasticsearch.cluster.NamedDiff;
 import org.elasticsearch.cluster.metadata.IndexMetadata;
@@ -144,7 +142,7 @@ public class SQLPlugin extends Plugin implements ActionPlugin, MapperPlugin, Clu
         settings.add(SslConfigSettings.SSL_RESOURCE_POLL_INTERVAL.setting());
 
         // also add CrateSettings
-        for (CrateSetting crateSetting : CrateSettings.CRATE_CLUSTER_SETTINGS) {
+        for (CrateSetting<?> crateSetting : CrateSettings.CRATE_CLUSTER_SETTINGS) {
             settings.add(crateSetting.setting());
         }
 
@@ -153,24 +151,23 @@ public class SQLPlugin extends Plugin implements ActionPlugin, MapperPlugin, Clu
 
     @Override
     public Collection<Class<? extends LifecycleComponent>> getGuiceServiceClasses() {
-        ImmutableList.Builder<Class<? extends LifecycleComponent>> builder =
-            ImmutableList.<Class<? extends LifecycleComponent>>builder()
-            .add(DecommissioningService.class)
-            .add(NodeDisconnectJobMonitorService.class)
-            .add(JobsLogService.class)
-            .add(PostgresNetty.class)
-            .add(TasksService.class)
-            .add(Schemas.class)
-            .add(DefaultTemplateService.class)
-            .add(ArrayMapperService.class)
-            .add(DanglingArtifactsService.class);
+        ArrayList<Class<? extends LifecycleComponent>> classes = new ArrayList<>();
+        classes.add(DecommissioningService.class);
+        classes.add(NodeDisconnectJobMonitorService.class);
+        classes.add(JobsLogService.class);
+        classes.add(PostgresNetty.class);
+        classes.add(TasksService.class);
+        classes.add(Schemas.class);
+        classes.add(DefaultTemplateService.class);
+        classes.add(ArrayMapperService.class);
+        classes.add(DanglingArtifactsService.class);
         if (licenseExtension != null) {
-            builder.addAll(licenseExtension.getGuiceServiceClasses());
+            classes.addAll(licenseExtension.getGuiceServiceClasses());
         }
         if (sslExtension != null) {
-            builder.addAll(sslExtension.getGuiceServiceClasses());
+            classes.addAll(sslExtension.getGuiceServiceClasses());
         }
-        return builder.build();
+        return Collections.unmodifiableCollection(classes);
     }
 
     @Override
@@ -219,7 +216,7 @@ public class SQLPlugin extends Plugin implements ActionPlugin, MapperPlugin, Clu
 
     @Override
     public Collection<AllocationDecider> createAllocationDeciders(Settings settings, ClusterSettings clusterSettings) {
-        return ImmutableList.of(new DecommissionAllocationDecider(settings, clusterSettings));
+        return List.of(new DecommissionAllocationDecider(settings, clusterSettings));
     }
 
     @Override

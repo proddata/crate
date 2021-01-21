@@ -47,6 +47,7 @@ dependencies {
     runtime project(':enterprise:functions')
     runtime project(':enterprise:licensing')
     runtime project(':enterprise:lang-js')
+    implementation "com.google.code.findbugs:jsr305:${versions.jsr305}"
 
     testCompile project(path: ':server', configuration: 'testOutput')
     testCompile("org.postgresql:postgresql:${versions.jdbc}")

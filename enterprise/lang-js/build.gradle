@@ -21,6 +21,7 @@ task writePropertiesFile {
 jar.dependsOn('writePropertiesFile')
 dependencies {
     implementation project(':server')
+    implementation "com.google.guava:guava:${versions.guava}"
 
     implementation "org.graalvm.js:js:${versions.graalvm}"
     implementation "org.graalvm.sdk:graal-sdk:${versions.graalvm}"

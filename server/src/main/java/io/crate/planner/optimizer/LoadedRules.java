@@ -25,7 +25,6 @@ package io.crate.planner.optimizer;
 import java.util.List;
 import java.util.Locale;
 
-import com.google.common.base.CaseFormat;
 
 import org.elasticsearch.common.inject.Singleton;
 
@@ -99,7 +98,7 @@ public class LoadedRules implements SessionSettingProvider {
     @VisibleForTesting
     SessionSetting<?> buildRuleSessionSetting(Class<? extends Rule<?>> rule) {
         var simpleName = rule.getSimpleName();
-        var optimizerRuleName = OPTIMIZER_SETTING_PREFIX + CaseFormat.UPPER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, simpleName);
+        var optimizerRuleName = OPTIMIZER_SETTING_PREFIX + simpleName.replace("([a-z])([A-Z]+)", "$1_$2");
         return new SessionSetting<>(
             optimizerRuleName,
             objects -> {},

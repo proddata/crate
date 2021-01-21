@@ -52,7 +52,7 @@ dependencies {
     compile "org.hdrhistogram:HdrHistogram:2.1.9"
     compile "com.carrotsearch:hppc:${versions.carrotsearch_hppc}"
 
-    compile "com.google.guava:guava:${versions.guava}"
+    implementation "com.google.guava:guava:${versions.guava}"
     compile "com.amazonaws:aws-java-sdk-s3:${versions.aws}"
     compile "org.apache.commons:commons-math3:${versions.commonsmath}"
     compile "com.fasterxml.jackson.dataformat:jackson-dataformat-csv:${versions.jackson}"
@@ -62,6 +62,7 @@ dependencies {
 
     testCompile project(path: ':libs:dex', configuration: 'testOutput')
 
+    testImplementation "com.google.guava:guava:${versions.guava}"
     testCompile "com.carrotsearch.randomizedtesting:randomizedtesting-runner:${versions.randomizedrunner}"
     testCompile "org.apache.lucene:lucene-codecs:${versions.lucene}"
     testCompile "org.apache.lucene:lucene-test-framework:${versions.lucene}"

@@ -39,6 +39,7 @@ description = 'CrateDB License Management'
 dependencies {
     implementation project(':libs:shared')
     implementation project(':server')
+    implementation "com.google.guava:guava:${versions.guava}"
     testImplementation project(path: ':server', configuration: 'testOutput')
     testImplementation project(path: ':libs:dex', configuration: 'testOutput')
     testImplementation "org.mockito:mockito-core:${versions.mockito}"

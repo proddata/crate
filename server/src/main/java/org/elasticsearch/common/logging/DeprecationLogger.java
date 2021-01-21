@@ -25,11 +25,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.google.common.collect.Lists;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.elasticsearch.common.SuppressLoggerChecks;
+import org.elasticsearch.common.util.CollectionUtils;
 import org.elasticsearch.common.util.concurrent.ThreadContext;
 
 import io.crate.common.collections.RingBuffer;
@@ -102,7 +101,7 @@ public class DeprecationLogger {
     }
 
     public static List<String> getRecentWarnings() {
-        return Lists.newArrayList(RECENT_WARNINGS.get());
+        return CollectionUtils.iterableAsArrayList(RECENT_WARNINGS.get());
     }
 
     public static void resetWarnings() {

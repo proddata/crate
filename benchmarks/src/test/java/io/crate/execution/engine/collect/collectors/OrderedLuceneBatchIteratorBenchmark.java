@@ -22,7 +22,6 @@
 
 package io.crate.execution.engine.collect.collectors;
 
-import com.google.common.util.concurrent.MoreExecutors;
 import io.crate.analyze.OrderBy;
 import io.crate.breaker.RamAccounting;
 import io.crate.breaker.RowAccountingWithEstimators;
@@ -120,7 +119,8 @@ public class OrderedLuceneBatchIteratorBenchmark {
         BatchIterator<Row> it = OrderedLuceneBatchIteratorFactory.newInstance(
             Collections.singletonList(createOrderedCollector(indexSearcher, columnName)),
             OrderingByPosition.rowOrdering(new int[]{0}, reverseFlags, nullsFirst),
-            ROW_ACCOUNTING, MoreExecutors.directExecutor(),
+            ROW_ACCOUNTING,
+            runnable -> runnable.run(),
             () -> 1,
             false
         );
