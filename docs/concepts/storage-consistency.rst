@@ -29,9 +29,9 @@ index broken down into segments getting stored on the filesystem. Physically
 the files reside under one of the configured data directories of a node.
 
 Lucene only appends data to segment files, which means that data written to the
-disc will never be mutated. This makes it easy for replication and recovery,
-since syncing a shard is simply a matter of fetching data from a specific
-marker.
+disc will never be mutated. This makes it easy for replication and
+:ref:`recovery <glossary-shard-recovery>`, since syncing a shard is simply a
+matter of fetching data from a specific marker.
 
 An arbitrary number of replica shards can be configured per table. Every
 operational replica holds a full synchronized copy of the primary shard.
@@ -96,7 +96,7 @@ permanent.
 
 The translog is also directly transferred when a newly allocated replica
 initializes itself from the primary shard. There is no need to flush segments
-to disc just for replica-recovery purposes.
+to disc just for replica :ref:`recovery <glossary-shard-recovery>` purposes.
 
 Addressing of documents
 =======================

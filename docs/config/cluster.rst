@@ -646,9 +646,10 @@ Routing allocation
 
 .. NOTE::
 
-   This allocation setting has no effect on recovery of primary shards! Even
-   when ``cluster.routing.allocation.enable`` is set to ``none``, nodes will
-   recover their unassigned local primary shards immediatelly after restart.
+   This allocation setting has no effect on the :ref:`recovery
+   <glossary-shard-recovery>` of primary shards! Even when
+   ``cluster.routing.allocation.enable`` is set to ``none``, nodes will recover
+   their unassigned local primary shards immediatelly after restart.
 
 .. _cluster.routing.rebalance.enable:
 
@@ -676,7 +677,7 @@ Routing allocation
 
   Allow to control when rebalancing will happen based on the total state of all
   the indices shards in the cluster. Defaulting to ``indices_all_active`` to
-  reduce chatter during initial recovery.
+  reduce chatter during initial :ref:`recovery <glossary-shard-recovery>`.
 
 .. _cluster.routing.allocation.cluster_concurrent_rebalance:
 
@@ -926,6 +927,8 @@ nodes every 30 seconds. This can also be changed by setting the
    from allocation decisions and CrateDB would attempt to allocate shards to
    other nodes, or leave shards unassigned if no suitable node can be found.
 
+.. _indices.recovery:
+
 Recovery
 --------
 
@@ -935,11 +938,11 @@ Recovery
   | *Default:*   ``40mb``
   | *Runtime:*  ``yes``
 
-  Specifies the maximum number of bytes that can be transferred during shard
-  recovery per seconds. Limiting can be disabled by setting it to ``0``. This
-  setting allows to control the network usage of the recovery process. Higher
-  values may result in higher network utilization, but also faster recovery
-  process.
+  Specifies the maximum number of bytes that can be transferred during
+  :ref:`shard recovery <glossary-shard-recovery>` per seconds. Limiting can be
+  disabled by setting it to ``0``. This setting allows to control the network
+  usage of the recovery process. Higher values may result in higher network
+  utilization, but also faster recovery process.
 
 .. _indices.recovery.retry_delay_state_sync:
 
@@ -948,7 +951,7 @@ Recovery
   | *Runtime:*  ``yes``
 
   Defines the time to wait after an issue caused by cluster state syncing
-  before retrying to recover.
+  before retrying to :ref:`recover <glossary-shard-recovery>`.
 
 .. _indices.recovery.retry_delay_network:
 
@@ -957,7 +960,7 @@ Recovery
   | *Runtime:*  ``yes``
 
   Defines the time to wait after an issue caused by the network before retrying
-  to recover.
+  to :ref:`recover <glossary-shard-recovery>`.
 
 .. _indices.recovery.internal_action_timeout:
 
@@ -965,7 +968,8 @@ Recovery
   | *Default:*  ``15m``
   | *Runtime:*  ``yes``
 
-  Defines the timeout for internal requests made as part of the recovery.
+  Defines the timeout for internal requests made as part of the :ref:`recovery
+  <glossary-shard-recovery>`.
 
 .. _indices.recovery.internal_action_long_timeout:
 
@@ -973,9 +977,10 @@ Recovery
   | *Default:*  ``30m``
   | *Runtime:*  ``yes``
 
-  Defines the timeout for internal requests made as part of the recovery that
-  are expected to take a long time. Defaults to twice
-  :ref:`internal_action_timeout <indices.recovery.internal_action_timeout>`.
+  Defines the timeout for internal requests made as part of the :ref:`recovery
+  <glossary-shard-recovery>` that are expected to take a long time. Defaults to
+  twice :ref:`internal_action_timeout
+  <indices.recovery.internal_action_timeout>`.
 
 .. _indices.recovery.recovery_activity_timeout:
 
@@ -983,8 +988,9 @@ Recovery
   | *Default:*  ``30m``
   | *Runtime:*  ``yes``
 
-  Recoveries that don't show any activity for more then this interval will
-  fail. Defaults to :ref:`internal_action_long_timeout
+  :ref:`Recoveries <glossary-shard-recovery>` that don't show any activity for
+  more then this interval will fail. Defaults to
+  :ref:`internal_action_long_timeout
   <indices.recovery.internal_action_long_timeout>`.
 
 .. _indices.recovery.max_concurrent_file_chunks:
@@ -993,12 +999,13 @@ Recovery
   | *Default:*  ``2``
   | *Runtime:*  ``yes``
 
-  Controls the number of file chunk requests that can be sent in parallel
-  per recovery. As multiple recoveries are already running in parallel,
-  controlled by :ref:`cluster.routing.allocation.node_concurrent_recoveries
+  Controls the number of file chunk requests that can be sent in parallel per
+  :ref:`recovery <glossary-shard-recovery>`. As multiple recoveries are already
+  running in parallel, controlled by
+  :ref:`cluster.routing.allocation.node_concurrent_recoveries
   <cluster.routing.allocation.node_concurrent_recoveries>`, increasing this
-  expert-level setting might only help in situations where peer recovery of
-  a single shard is not reaching the total inbound and outbound peer recovery
+  expert-level setting might only help in situations where peer recovery of a
+  single shard is not reaching the total inbound and outbound peer recovery
   traffic as configured by :ref:`indices.recovery.max_bytes_per_sec
   <indices.recovery.max_bytes_per_sec>`, but is CPU-bound instead, typically
   when using transport-level security or compression.
@@ -1244,9 +1251,9 @@ Metadata
 Metadata gateway
 ................
 
-  The gateway persists cluster meta data on disk every time the meta data
-  changes. This data is stored persistently across full cluster restarts and
-  recovered after nodes are started again.
+The gateway persists cluster meta data on disk every time the meta data
+changes. This data is stored persistently across full cluster restarts and
+recovered after nodes are started again.
 
 .. _gateway.expected_nodes:
 

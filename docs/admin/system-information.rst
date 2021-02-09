@@ -789,6 +789,8 @@ flag::
    Updates on this column are transient, so changed values are lost after the
    affected node is restarted.
 
+.. _sys-node-checks-settings:
+
 Description of checked node settings
 ------------------------------------
 
@@ -797,8 +799,8 @@ Recovery expected nodes
 
 The check for the :ref:`gateway.expected_nodes <gateway.expected_nodes>`
 setting checks that the number of nodes that should be waited for the immediate
-cluster state recovery, must be equal to the maximum number of data and master
-nodes in the cluster.
+cluster state :ref:`recovery <glossary-shard-recovery>`. This value must be
+equal to the maximum number of data and master nodes in the cluster.
 
 Recovery after nodes
 ....................
@@ -806,14 +808,14 @@ Recovery after nodes
 The check for the :ref:`gateway.recover_after_nodes
 <gateway.recover_after_nodes>` verifies that the number of started nodes before
 the cluster starts must be greater than the half of the expected number of
-nodes and equal/less than number of nodes in the cluster.
+nodes and equal to or less than number of nodes in the cluster.
 
 ::
 
   (E / 2) < R <= E
 
-where ``R`` is the number of recovery nodes, ``E`` is the number of expected
-nodes.
+Here, ``R`` is the number of :ref:`recovery <glossary-shard-recovery>` nodes
+and ``E`` is the number of expected nodes.
 
 Recovery after time
 ...................
@@ -901,11 +903,7 @@ Table schema
       - Indicates if this shard is the primary shard.
       - ``BOOLEAN``
     * - ``recovery``
-      - Recovery statistics of a shard.
-
-        Recovery is the process of moving a shard to a different node or
-        loading a shard from disk, e.g. during node startup or snapshot
-        recovery.
+      - :ref:`Recovery <glossary-shard-recovery>` statistics for a shard.
       - ``OBJECT``
     * - ``recovery['files']``
       - File recovery statistics

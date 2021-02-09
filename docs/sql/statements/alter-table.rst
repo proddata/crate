@@ -216,6 +216,6 @@ where ``reroute_option`` is::
   error out.
 
 **CANCEL**
-  This cancels the allocation/recovery of a ``shard_id`` of a ``table_ident``
-  on a given ``node``. The ``allow_primary`` flag indicates if it is allowed to
-  cancel the allocation of a primary shard.
+  This cancels the allocation or :ref:`recovery <glossary-shard-recovery>` of a
+  ``shard_id`` of a ``table_ident`` on a given ``node``. The ``allow_primary``
+  flag indicates if it is allowed to cancel the allocation of a primary shard.

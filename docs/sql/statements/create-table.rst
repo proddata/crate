@@ -443,7 +443,8 @@ Allows to have a read only table that additionally can be deleted.
 Indicates whether soft deletes are enabled or disabled.
 
 Soft deletes allow CrateDB to preserve recent deletions within the Lucene
-index. This information is used for shard recovery.
+index. This information is used for :ref:`shard recovery
+<glossary-shard-recovery>`.
 
 Before the introduction of soft deletes, CrateDB had to retain the information
 in the :ref:`Translog <durability>`. Using soft deletes uses less storage than
