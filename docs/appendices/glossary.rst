@@ -80,6 +80,11 @@ L
 N
 =
 
+.. _glossary-node:
+
+**Node**
+    PLACEHOLDER TEXT
+
 .. _glossary-node-types:
 
 **Node types**
@@ -132,10 +137,29 @@ R
 S
 =
 
+.. _glossary-shard:
+
+**Shard**
+    PLACEHOLDER TEXT
+
 .. _glossary-shard-allocation:
 
 **Shard allocation**
-    PLACEHOLDER TEXT
+    The process by which CrateDB allocates :ref:`shards <glossary-shard>` to a
+    specific :ref:`nodes <glossary-node>`.
+
+    .. SEEALSO::
+
+        :ref:`ddl_shard_allocation`
+
+        :ref:`Cluster configuration: Routing allocation <conf_routing>`
+
+        :ref:`Sharding: Number of shards <number-of-shards>`
+
+        :ref:`Altering tables: Changing the number of shards
+        <alter-shard-number>`
+
+        :ref:`Altering tables: Reroute shards <ddl_reroute_shards>`
 
 .. _glossary-shard-recovery:
 
@@ -144,10 +168,11 @@ S
     <glossary-replica-shard>` from a :ref:`primary shard
     <glossary-primary-shard>`.
 
-    Shard recovery can happen during node startup, after node failure, when
-    :ref:`replicating <replication>` a primary shard, when moving a shard to
-    another node (i.e., when :ref:`rebalancing <glossary-rebalancing>` the
-    cluster), or during :ref:`snapshot restoration <snapshot-restore>`.
+    Shard recovery can happen during :ref:`node <glossary-node>` startup, after
+    node failure, when :ref:`replicating <replication>` a primary shard, when
+    moving a shard to another node (i.e., when :ref:`rebalancing
+    <glossary-rebalancing>` the cluster), or during :ref:`snapshot restoration
+    <snapshot-restore>`.
 
     A shard that is being recovered cannot be queried until the recovery
     process is complete.

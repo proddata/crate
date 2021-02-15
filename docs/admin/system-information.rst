@@ -2060,7 +2060,7 @@ Allocations
 ===========
 
 The ``sys.allocations`` table contains information about shards and their
-allocation state. The table contains:
+:ref:`allocation <glossary-shard-allocation>` state. The table contains:
 
 * shards that are unassigned and why they are unassigned
 * shards that are assigned but cannot be moved or rebalanced and why they

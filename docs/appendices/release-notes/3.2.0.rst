@@ -203,8 +203,8 @@ Database Administration
   clean up internal structures that weren't properly cleaned up due to cluster
   failures during operations which create such temporary artifacts.
 
-- Added support for per-table
-  :ref:`shard allocation filtering <ddl_shard_allocation>`.
+- Added support for per-table :ref:`shard allocation filtering
+  <ddl_shard_allocation>`.
 
 Admin UI Upgrade to 1.11.3
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

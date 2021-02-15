@@ -359,9 +359,9 @@ system eventually, but in case a node holding the primary copy has a system
 failure, the replica copy couldn't be promoted automatically as it would lead
 to data loss since the system is aware that the replica shard didn't receive
 all writes. In such a scenario, :ref:`ALTER TABLE .. REROUTE PROMOTE REPLICA
-<alter-table-reroute-promote-replica>` can be used to force the allocation of a
-stale replica copy to at least recover the data that is available in the stale
-replica copy.
+<alter-table-reroute-promote-replica>` can be used to force the
+:ref:`allocation <glossary-shard-recovery>` of a stale replica copy to at least
+recover the data that is available in the stale replica copy.
 
 Say you've a 3 node cluster and a table with 1 configured replica. With
 ``write.wait_for_active_shards=1`` and ``number_of_replicas=1`` a node in the
@@ -614,19 +614,29 @@ every :ref:`translog.sync_interval <translog_sync_interval>`. If set to
 :value:
   ``REQUEST`` (default), ``ASYNC``
 
+
+.. _routing.allocation:
+
+.. _routing.allocation.total_shards_per_node:
+
 ``routing.allocation.total_shards_per_node``
 --------------------------------------------
 
 Controls the total number of shards (replicas and primaries) allowed to be
-allocated on a single node. Defaults to unbounded (-1).
+:ref:`allocated <glossary-shard-allocation>` on a single node. Defaults to
+unbounded (-1).
 
 :value:
   Number of shards per node.
 
+
+.. _routing.allocation.enable:
+
 ``routing.allocation.enable``
 -----------------------------
 
-Controls shard allocation for a specific table. Can be set to:
+Controls shard :ref:`allocation <glossary-shard-allocation>` for a specific
+table. Can be set to:
 
 :all:
   Allows shard allocation for all shards. (Default)
@@ -640,37 +650,57 @@ Controls shard allocation for a specific table. Can be set to:
 :none:
   No shard allocation allowed.
 
-.. _allocation_max_retries:
+
+.. _routing.allocation.max_retries:
 
 ``routing.allocation.max_retries``
 ----------------------------------
 
-Defines the number of attempts to allocate a shard before giving up and leaving
-the shard unallocated.
+Defines the number of attempts to :ref:`allocate <glossary-shard-allocation>` a
+shard before giving up and leaving the shard unallocated.
 
 :value:
   Number of retries to allocate a shard. Defaults to 5.
+
+
+.. _routing.allocation.include:
 
 ``routing.allocation.include.{attribute}``
 ------------------------------------------
 
 Assign the table to a node whose ``{attribute}`` has at least one of the
 comma-separated values.
-See :ref:`ddl_shard_allocation` for details.
+
+.. SEEALSO::
+
+    :ref:`ddl_shard_allocation`
+
+
+.. _routing.allocation.require:
 
 ``routing.allocation.require.{attribute}``
 ------------------------------------------
 
 Assign the table to a node whose ``{attribute}`` has all of the comma-separated
 values.
-See :ref:`ddl_shard_allocation` for details.
+
+.. SEEALSO::
+
+    :ref:`ddl_shard_allocation`
+
+
+.. _routing.allocation.exclude:
 
 ``routing.allocation.exclude.{attribute}``
 ------------------------------------------
 
-Assign the table to a node whose ``{attribute}`` has none of the comma-separated
-values.
-See :ref:`ddl_shard_allocation` for details.
+Assign the table to a node whose ``{attribute}`` has none of the
+comma-separated values.
+
+.. SEEALSO::
+
+    :ref:`ddl_shard_allocation`
+
 
 ``warming.enable``
 ------------------
@@ -685,15 +715,18 @@ Enabled by default.
 :value:
   `true`` to enable warming up, otherwise ``false``
 
+
+.. _unassigned.node_left.delayed_timeout:
+
 ``unassigned.node_left.delayed_timeout``
 ----------------------------------------
 
-Delay the allocation of replica shards which have become unassigned because a
-node has left. It defaults to ``1m`` to give a node time to restart
-completely (which can take some time when the node has lots of shards).
-Setting the timeout to ``0`` will start allocation immediately. This setting
-can be changed on runtime in order to increase/decrease the delayed
-allocation if needed.
+Delay the :ref:`allocation <glossary-shard-allocation>` of replica shards which
+have become unassigned because a node has left. It defaults to ``1m`` to give a
+node time to restart completely (which can take some time when the node has
+lots of shards). Setting the timeout to ``0`` will start allocation
+immediately. This setting can be changed on runtime in order to
+increase/decrease the delayed allocation if needed.
 
 .. _sql_ref_column_policy:
 

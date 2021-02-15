@@ -294,9 +294,9 @@ nodes of the cluster:
   | *Default:*   ``2h``
   | *Runtime:*  ``yes``
 
-  Defines the maximum waiting time in milliseconds for the reallocation process
-  to finish. The ``force`` setting will define the behaviour when the shutdown
-  process runs into this timeout.
+  Defines the maximum waiting time in milliseconds for the :ref:`reallocation
+  <glossary-shard-allocation>` process to finish. The ``force`` setting will
+  define the behaviour when the shutdown process runs into this timeout.
 
   The timeout expects a time value either as a ``bigint`` or
   ``double precision`` or alternatively as a string literal with a time suffix
@@ -628,8 +628,8 @@ Routing allocation
   | *Runtime:*  ``yes``
   | *Allowed values:* ``all | none | primaries | new_primaries``
 
-  ``all`` allows all shard allocations, the cluster can allocate all kinds of
-  shards.
+  ``all`` allows all :ref:`shard allocations <glossary-shard-allocation>`, the
+  cluster can allocate all kinds of shards.
 
   ``none`` allows no shard allocations at all. No shard will be moved or
   created.
@@ -710,8 +710,8 @@ Routing allocation
 Awareness
 .........
 
-Cluster allocation awareness allows to configure shard and replicas allocation
-across generic attributes associated with nodes.
+Cluster allocation awareness allows to configure :ref:`shard allocation
+<glossary-shard-allocation>` across generic attributes associated with nodes.
 
 .. _cluster.routing.allocation.awareness.attributes:
 
@@ -719,8 +719,8 @@ across generic attributes associated with nodes.
   | *Runtime:*  ``no``
 
   You may define :ref:`custom node attributes <conf-node-attributes>` which can
-  then be used to do awareness based on the allocation of a shard and its
-  replicas.
+  then be used to do awareness based on the :ref:`allocation
+  <glossary-shard-allocation>` of a shard and its replicas.
 
   For example, let's say we want to use an attribute named ``rack_id``. We
   start two nodes with ``node.attr.rack_id`` set to ``rack_one``. Then we
@@ -740,8 +740,9 @@ across generic attributes associated with nodes.
 **cluster.routing.allocation.awareness.force.\*.values**
   | *Runtime:*  ``no``
 
-  Attributes on which shard allocation will be forced. Here, ``*`` is a
-  placeholder for the awareness attribute, which can be configured using the
+  Attributes on which :ref:`shard allocation <glossary-shard-allocation>` will
+  be forced. Here, ``*`` is a placeholder for the awareness attribute, which
+  can be configured using the
   :ref:`cluster.routing.allocation.awareness.attributes
   <cluster.routing.allocation.awareness.attributes>` setting.
 
@@ -781,9 +782,9 @@ can bring the respective properties of each node closer together.
   | *Default:*   ``0.45f``
   | *Runtime:*  ``yes``
 
-  Defines the weight factor for shards allocated on a node (float). Raising
-  this raises the tendency to equalize the number of shards across all nodes in
-  the cluster.
+  Defines the weight factor for shards :ref:`allocated
+  <glossary-shard-allocation>` on a node (float). Raising this raises the
+  tendency to equalize the number of shards across all nodes in the cluster.
 
 .. _cluster.routing.allocation.balance.index:
 
@@ -791,9 +792,10 @@ can bring the respective properties of each node closer together.
   | *Default:*   ``0.55f``
   | *Runtime:*  ``yes``
 
-  Defines a factor to the number of shards per index allocated on a specific
-  node (float). Increasing this value raises the tendency to equalize the
-  number of shards per index across all nodes in the cluster.
+  Defines a factor to the number of shards per index :ref:`allocated
+  <glossary-shard-allocation>` on a specific node (float). Increasing this
+  value raises the tendency to equalize the number of shards per index across
+  all nodes in the cluster.
 
 .. _cluster.routing.allocation.balance.threshold:
 
@@ -811,7 +813,8 @@ can bring the respective properties of each node closer together.
 Cluster-wide allocation filtering
 .................................
 
-Control which shards are allocated to which nodes.
+Control which shards are :ref:`allocated <glossary-shard-allocation>` to which
+nodes.
 
 Filter definitions are retroactively enforced. If a filter prevents matching
 shards from being newly allocated to a node, existing matching shards will also
@@ -825,16 +828,24 @@ addresses.
 **cluster.routing.allocation.include.***
   | *Runtime:*  ``yes``
 
-  Place shards only on nodes where one of the specified values matches the
-  attribute. e.g.: cluster.routing.allocation.include.zone: "zone1,zone2"
+  Only :ref:`allocate shards <glossary-shard-allocation>` on nodes where one of
+  the specified values matches the attribute.
+
+  For example::
+
+      cluster.routing.allocation.include.zone: "zone1,zone2"`
 
 .. _cluster.routing.allocation.exclude.*:
 
 **cluster.routing.allocation.exclude.***
   | *Runtime:*  ``yes``
 
-  Place shards only on nodes where none of the specified values matches the
-  attribute. e.g.: cluster.routing.allocation.exclude.zone: "zone1"
+  Only :ref:`allocate shards <glossary-shard-allocation>` on nodes where none
+  of the specified values matches the attribute.
+
+  For example::
+
+      cluster.routing.allocation.exclude.zone: "zone1"
 
 .. _cluster.routing.allocation.require.*:
 
@@ -842,8 +853,8 @@ addresses.
   | *Runtime:*  ``yes``
 
   Used to specify a number of rules, which all MUST match for a node in order
-  to allocate a shard on it. This is in contrast to include which will include
-  a node if ANY rule matches.
+  to :ref:`allocate a shard  <glossary-shard-allocation>` on it. This is in
+  contrast to include which will include a node if ANY rule matches.
 
 
 .. _cluster.routing.allocation.disk:
@@ -857,7 +868,8 @@ Disk-based shard allocation
   | *Default:*   ``true``
   | *Runtime:*  ``yes``
 
-  Prevent shard allocation on nodes depending of the disk usage.
+  Prevent :ref:`shard allocation <glossary-shard-allocation>` on nodes
+  depending of the disk usage.
 
 .. _cluster.routing.allocation.disk.watermark.low:
 
@@ -865,11 +877,11 @@ Disk-based shard allocation
   | *Default:*   ``85%``
   | *Runtime:*  ``yes``
 
-  Defines the lower disk threshold limit for shard allocations. New shards will
-  not be allocated on nodes with disk usage greater than this value. It can
-  also be set to an absolute bytes value (like e.g. ``500mb``) to prevent the
-  cluster from allocating new shards on node with less free disk space than
-  this value.
+  Defines the lower disk threshold limit for :ref:`shard allocations
+  <glossary-shard-allocation>`. New shards will not be allocated on nodes with
+  disk usage greater than this value. It can also be set to an absolute bytes
+  value (like e.g. ``500mb``) to prevent the cluster from allocating new shards
+  on node with less free disk space than this value.
 
 .. _cluster.routing.allocation.disk.watermark.high:
 
@@ -877,11 +889,11 @@ Disk-based shard allocation
   | *Default:*   ``90%``
   | *Runtime:*  ``yes``
 
-  Defines the higher disk threshold limit for shard allocations. The cluster
-  will attempt to relocate existing shards to another node if the disk usage on
-  a node rises above this value. It can also be set to an absolute bytes value
-  (like e.g. ``500mb``) to relocate shards from nodes with less free disk space
-  than this value.
+  Defines the higher disk threshold limit for :ref:`shard allocations
+  <glossary-shard-allocation>`. The cluster will attempt to relocate existing
+  shards to another node if the disk usage on a node rises above this value. It
+  can also be set to an absolute bytes value (like e.g. ``500mb``) to relocate
+  shards from nodes with less free disk space than this value.
 
 .. _cluster.routing.allocation.disk.watermark.flood_stage:
 
@@ -890,12 +902,17 @@ Disk-based shard allocation
   | *Runtime:*  ``yes``
 
   Defines the threshold on which CrateDB enforces a read-only block on every
-  index that has at least one shard allocated on a node with at least one disk
-  exceeding the flood stage.
-  Note, that the read-only blocks are not automatically removed from the
-  indices if the disk space is freed and the threshold is undershot. To remove
-  the block, execute ``ALTER TABLE ... SET ("blocks.read_only_allow_delete" =
-  FALSE)`` for affected tables (see :ref:`table-settings-blocks.read_only_allow_delete`).
+  index that has at least one :ref:`shard allocated
+  <glossary-shard-allocation>` on a node with at least one disk exceeding the
+  flood stage.
+
+  .. NOTE::
+
+      Read-only blocks are not automatically removed from the indices if the
+      disk space is freed and the threshold is undershot. To remove the block,
+      execute ``ALTER TABLE ... SET ("blocks.read_only_allow_delete" = FALSE)``
+      for affected tables (see
+      :ref:`table-settings-blocks.read_only_allow_delete`).
 
 ``cluster.routing.allocation.disk.watermark`` settings may be defined as
 percentages or bytes values. However, it is not possible to mix the value
@@ -909,10 +926,11 @@ nodes every 30 seconds. This can also be changed by setting the
 
    The watermark settings are also used for the
    :ref:`node_checks_watermark_low` and :ref:`node_checks_watermark_high` node
-   check. Setting ``cluster.routing.allocation.disk.threshold_enabled`` to
-   false will disable the allocation decider, but the node checks will still be
-   active and warn users about running low on disk space.
+   check.
 
+   Setting ``cluster.routing.allocation.disk.threshold_enabled`` to false will
+   disable the allocation decider, but the node checks will still be active and
+   warn users about running low on disk space.
 
 .. _cluster.routing.allocation.total_shards_per_node:
 
@@ -920,9 +938,10 @@ nodes every 30 seconds. This can also be changed by setting the
    | *Default*: ``-1``
    | *Runtime*: ``yes``
 
-   Limits the number of shards that can be allocated per node. ``-1`` means
-   unlimited.
-   Setting this to for example ``1000`` will prevent CrateDB from assigning
+   Limits the number of shards that can be :ref:`allocated
+   <glossary-shard-allocation>` per node. A value of ``-1`` means unlimited.
+
+   Setting this to ``1000``, for example, will prevent CrateDB from assigning
    more than 1000 shards per node. A node with 1000 shards would be excluded
    from allocation decisions and CrateDB would attempt to allocate shards to
    other nodes, or leave shards unassigned if no suitable node can be found.
@@ -1019,15 +1038,12 @@ Memory management
   | *Default:*  ``on-heap``
   | *Runtime:*  ``yes``
 
-
 Supported values are ``on-heap`` and ``off-heap``. This influences if memory is
 preferably allocated in the heap space or in the off-heap/direct memory region.
-
 
 Setting this to ``off-heap`` doesn't imply that the heap won't be used anymore.
 Most allocations will still happen in the heap space but some operations will
 be allowed to utilize off heap buffers.
-
 
 .. warning::
 

@@ -137,9 +137,9 @@ Changes
 - Added new cluster setting ``routing.rebalance.enable`` that allows to
   enable or disable shard rebalancing on the cluster.
 
-- Added support to manually control the allocation of shards using ``ALTER
-  TABLE REROUTE``. Supported reroute-options are: MOVE, ALLOCATE REPLICA,
-  CANCEL
+- Added support to manually control the :ref:`allocation of shards
+  <glossary-shard-allocation>` using ``ALTER TABLE REROUTE``. Supported
+  reroute-options are: ``MOVE``, ``ALLOCATE REPLICA``, and ``CANCEL``.
 
 - Added support to manually retry the allocation of shards that failed to
   allocate using ``ALTER CLUSTER REROUTE RETRY FAILED``.

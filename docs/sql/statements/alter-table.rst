@@ -42,8 +42,9 @@ Description
 ===========
 
 ``ALTER TABLE`` can be used to modify an existing table definition. It provides
-options to add columns, modify constraints, enabling or disabling
-table parameters and allows to execute a shard reroute allocation.
+options to add columns, modify constraints, enabling or disabling table
+parameters and allows to execute a shard  :ref:`reroute allocation
+<alter_table_reroute>`.
 
 Use the ``BLOB`` keyword in order to alter a blob table (see
 :ref:`blob_support`). Blob tables cannot have custom columns which means that
@@ -93,6 +94,8 @@ columns with a value each to identify the partition to alter.
 .. SEEALSO:: :ref:`Alter Partitioned Tables <partitioned_tables_alter>`
 
 
+.. _alter_table_args:
+
 Arguments
 =========
 
@@ -108,10 +111,10 @@ Using ``RESET`` will reset the parameter to its default value.
   The name of the parameter that is set to a new value or its default.
 
 The supported parameters are listed in the :ref:`CREATE TABLE WITH CLAUSE
-<with_clause>` documentation. In addition to those, for dynamically
-changing the number of allocated shards, the parameter ``number_of_shards``
-can be used. For more more info on that, see :ref:`alter_change_number_of_shard`.
-
+<with_clause>` documentation. In addition to those, for dynamically changing
+the number of :ref:`allocated shards <glossary-shard-allocation>`, the
+parameter ``number_of_shards`` can be used. For more more info on that, see
+:ref:`alter-shard-number`.
 
 ``ADD COLUMN``
 --------------
@@ -152,9 +155,10 @@ this operation the shards of the table will become temporarily unavailable.
 -----------
 
 The ``REROUTE`` command provides various options to manually control the
-allocation of shards. It allows the enforcement of explicit allocations,
-cancellations and the moving of shards between nodes in a cluster. See
-:ref:`ddl_reroute_shards` to get the convenient use-cases.
+:ref:`allocation of shards <glossary-shard-allocation>`. It allows the
+enforcement of explicit allocations, cancellations and the moving of shards
+between nodes in a cluster. See :ref:`ddl_reroute_shards` to get the convenient
+use-cases.
 
 The rowcount defines if the reroute or allocation process of a shard was
 acknowledged or rejected.

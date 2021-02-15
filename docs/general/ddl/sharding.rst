@@ -28,6 +28,9 @@ think about shards when querying a table.
 Read requests are broken down and executed in parallel across multiple shards
 on multiple nodes, massively improving read performance.
 
+
+.. _number-of-shards:
+
 Number of shards
 ================
 
@@ -46,18 +49,20 @@ is applied, (see :ref:`ref_clustered_clause`).
 
 .. NOTE::
 
-   The number of shards :ref:`can be changed <alter_change_number_of_shard>`
-   after table creation, providing the value is a multiple of
+   The number of shards :ref:`can be changed <alter-shard-number>` after table
+   creation, providing the value is a multiple of
    :ref:`number_of_routing_shards <sql_ref_number_of_routing_shards>` (set at
    table-creation time). Altering the number of shards will put the table into
    a read-only state until the operation has completed.
 
 .. CAUTION::
 
-   Well tuned shard allocation is vital. Read the `Sharding Guide`_ to make
-   sure you're getting the best performance out ot CrateDB.
+   Well tuned :ref:`shard allocation <sql_ddl_sharding>` is vital. Read the
+   `Sharding Guide`_ to make sure you're getting the best performance out ot
+   CrateDB.
 
 .. _Sharding Guide: https://crate.io/docs/crate/howtos/en/latest/performance/sharding.html
+
 
 .. _routing:
 

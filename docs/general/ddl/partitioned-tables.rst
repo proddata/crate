@@ -47,7 +47,7 @@ can be deleted and no expensive query is involved.
 
    Every table partition is clustered into as many shards as you configure for
    the table. Because of this, a good partition configuration depends on good
-   shard allocation.
+   :ref:`shard allocation <glossary-shard-allocation>`.
 
    Well tuned shard allocation is vital. Read the `Sharding Guide`_ to make
    sure you're getting the best performance out ot CrateDB.
@@ -430,9 +430,9 @@ Altering a single partition
 ...........................
 
 We also provide the option to change the number of shards that are already
-allocated for an existing partition. This option operates on a partition basis,
-thus a specific partition needs to be specified
-::
+:ref:`allocated <glossary-shard-allocation>` for an existing partition. This
+option operates on a partition basis, thus a specific partition needs to be
+specified::
 
     cr> ALTER TABLE parted_table PARTITION (day=1396915200000) SET ("blocks.write" = true)
     ALTER OK, -1 rows affected (... sec)
@@ -459,7 +459,7 @@ thus a specific partition needs to be specified
 .. NOTE::
 
    The same prerequisites and restrictions as with normal
-   tables apply. See :ref:`alter_change_number_of_shard`.
+   tables apply. See :ref:`alter-shard-number`.
 
 Alter partitions
 ----------------

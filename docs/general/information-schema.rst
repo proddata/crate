@@ -188,7 +188,8 @@ Table parameters can be applied with ``CREATE TABLE`` on creation of a table.
 With ``ALTER TABLE`` they can be set on already existing tables.
 
 The following statement creates a new table and sets the refresh interval of
-shards to 500 ms and sets the shard allocation for primary shards only::
+shards to 500 ms and sets the :ref:`shard allocation
+<glossary-shard-allocation>` for primary shards only::
 
     cr> create table parameterized_table (id integer, content text)
     ... with ("refresh_interval"=500, "routing.allocation.enable"='primaries');

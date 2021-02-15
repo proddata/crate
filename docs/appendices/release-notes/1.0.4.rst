@@ -60,9 +60,10 @@ Fixes
  - Fixed an issue which caused restoring a whole partitioned table from a
    snapshot to fail.
 
- - Fixed the low/high disk-based shard allocation watermark settings. When a
-   percentage value is provided for either of settings, it won't be converted
-   to an absolute byte value.
+ - Fixed the low/high disk-based :ref:`shard allocation
+   <glossary-shard-allocation>` watermark settings. When a percentage value is
+   provided for either of settings, it won't be converted to an absolute byte
+   value.
 
  - Index columns based on string arrays are correctly populated with values.
 
