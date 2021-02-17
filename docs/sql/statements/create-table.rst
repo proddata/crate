@@ -189,6 +189,10 @@ if the table exists already.
 The optional CLUSTERED clause specifies how a table should be distributed
 accross a cluster.
 
+::
+
+    [ CLUSTERED [ BY (routing_column) ] INTO num_shards SHARDS ]
+
 :num_shards:
   Specifies the number of :ref:`shards <sql_ddl_sharding>` a table is stored
   in. Must be greater than 0. If not provided, the number of shards is
@@ -204,10 +208,10 @@ accross a cluster.
      minimum value to each table or partition as default.
 
 :routing_column:
-  Allows to explicitly specify a column or field on which basis rows are
-  sharded. All rows having the same value in ``routing_column`` are
-  stored in the same shard. The default is the primary key if specified,
-  otherwise the internal ``_id`` column.
+  Specify a :ref:`routing column <glossary-routing-column>` on which basis rows
+  are sharded. All rows having the same value in ``routing_column`` are stored
+  in the same shard. The default is the primary key if specified, otherwise the
+  internal ``_id`` column.
 
 .. SEEALSO::
 

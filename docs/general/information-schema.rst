@@ -119,9 +119,9 @@ number of replicas.
     +--------------------+-------------------------+------------+------------------+--------------------+
     SELECT 50 rows in set (... sec)
 
-The table also contains additional information such as specified routing
-(:ref:`sql_ddl_sharding`) and partitioned by (:ref:`partitioned_tables`)
-columns::
+The table also contains additional information such as the specified
+:ref:`routing column <glossary-routing-column>` and partitioned by
+(:ref:`partitioned_tables`) columns::
 
     cr> SELECT table_name, clustered_by, partitioned_by
     ... FROM information_schema.tables
@@ -146,7 +146,7 @@ columns::
 +----------------------------------+------------------------------------------------------------------------------------+-------------+
 | ``closed``                       | The state of the table                                                             | ``BOOLEAN`` |
 +----------------------------------+------------------------------------------------------------------------------------+-------------+
-| ``clustered_by``                 | The routing column used to cluster the table                                       | ``TEXT``    |
+| ``clustered_by``                 | The :ref:`routing column <glossary-routing-column>` used to cluster the table      | ``TEXT``    |
 +----------------------------------+------------------------------------------------------------------------------------+-------------+
 | ``column_policy``                | Defines whether the table uses a ``STRICT`` or a ``DYNAMIC`` :ref:`column_policy`  | ``TEXT``    |
 +----------------------------------+------------------------------------------------------------------------------------+-------------+
@@ -158,7 +158,7 @@ columns::
 +----------------------------------+------------------------------------------------------------------------------------+-------------+
 | ``reference_generation``         | Specifies how values in the self-referencing column are generated                  | ``TEXT``    |
 +----------------------------------+------------------------------------------------------------------------------------+-------------+
-| ``routing_hash_function``        | The name of the hash function used for internal routing                            | ``TEXT``    |
+| ``routing_hash_function``        | The name of the hash function used for internal :ref:`routing <routing>`           | ``TEXT``    |
 +----------------------------------+------------------------------------------------------------------------------------+-------------+
 | ``self_referencing_column_name`` | The name of the column that uniquely identifies each row (always ``_id``)          | ``TEXT``    |
 +----------------------------------+------------------------------------------------------------------------------------+-------------+

@@ -98,16 +98,19 @@ The translog is also directly transferred when a newly allocated replica
 initializes itself from the primary shard. There is no need to flush segments
 to disc just for replica :ref:`recovery <glossary-shard-recovery>` purposes.
 
-Addressing of documents
-=======================
+.. _concepts_addressing_documents:
+
+Addressing documents
+====================
 
 Every document has an `internal identifier`_. By default this identifier
 is derived from the primary key. Documents living in tables without a primary
 key are assigned a unique auto-generated ID automatically when created.
 
-Each document is routed by its routing key to one specific shard. By default
-this key is the value of the ``_id`` column. However this can be configured in
-the table schema (see `Routing`_).
+Each document is routed by its :ref:`routing column <glossary-routing-column>`
+to one specific shard. By default, the :ref:`internal document ID
+<sql_administration_system_column_id>` is used. However, this can be configured
+in the table schema (see `Routing`_).
 
 While transparent to the user, internally there are two ways how CrateDB
 accesses documents:

@@ -131,6 +131,25 @@ R
 **Replica shard**
     PLACEHOLDER TEXT
 
+.. _glossary-routing-column:
+
+**Routing column**
+    Values in this column are used to compute a hash which is then used to
+    route the corresponding row to a specific shard.
+
+    .. NOTE::
+
+        The routing of rows to a specific shard is not the same as the routing
+        of shards to a specific node (also known as :ref:`shard allocation
+        <glossary-shard-allocation>`).
+
+    .. SEEALSO::
+
+        :ref:`Storage and consistency: Addressing documents <concepts_addressing_documents>`
+
+        :ref:`Sharding: Routing <routing>`
+
+        :ref:`CREATE TABLE: CLUSTERED clause <ref_clustered_clause>`
 
 .. _glossary-s:
 
@@ -147,6 +166,11 @@ S
 **Shard allocation**
     The process by which CrateDB allocates :ref:`shards <glossary-shard>` to a
     specific :ref:`nodes <glossary-node>`.
+
+    .. NOTE::
+
+        Shard allocation is also known as *shard routing*, which is not to be
+        confused with :ref:`row routing <glossary-routing-column>`.
 
     .. SEEALSO::
 

@@ -73,9 +73,9 @@ _id
 
   The value is a unique identifier for each row in a table and is a compound
   string representation of all primary key values of that row. If no primary
-  keys are defined the id is randomly generated. If no dedicated routing column
-  is defined the ``_id`` value is used for distributing the records on the
-  shards.
+  keys are defined the id is randomly generated. If no dedicated :ref:`routing
+  column <glossary-routing-column>` is defined the ``_id`` value is used for
+  distributing the records on the shards.
 
 .. _Optimistic Concurrency Control: https://en.wikipedia.org/wiki/Optimistic_concurrency_control
 
