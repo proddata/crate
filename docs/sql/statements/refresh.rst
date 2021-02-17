@@ -74,8 +74,9 @@ These kind of filters will result in a primary key lookup. You can use the
     EXPLAIN 1 row in set (... sec)
 
 
-This lists a ``Get`` operator, which is the internal operator name for a
-primary key lookup. Compare this with the following output::
+This lists a ``Get`` :ref:`operator <glossary-operator>`, which is the internal
+operator name for a primary key lookup. Compare this with the following
+output::
 
     cr> EXPLAIN SELECT * FROM pk_demo WHERE id > 1;
     +----------------------------------------+

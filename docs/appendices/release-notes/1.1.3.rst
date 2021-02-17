@@ -38,8 +38,9 @@ Fixes
 
  - Admin UI improvements.
 
- - Improved the accuracy of results if arithmetic operators +,-,*,/ are used
-   in expressions that contain only float-type values.
+ - Improved the accuracy of results if  :ref:`arithmetic operators
+   <arithmetic>` +,-,*,/ are used in expressions that contain only float-type
+   values.
 
  - Fixed ``COPY FROM`` to be able to copy data into a partitioned table with a
    generated column as both the primary key and the partitioned column.

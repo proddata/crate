@@ -30,9 +30,9 @@ Released on 2020/01/15.
 Breaking Changes
 ================
 
-- Changed arithmetic operations ``*``, ``+``, and ``-`` of types ``integer``
-  and ``bigint`` to throw an exception instead of rolling over from positive
-  to negative or the other way around.
+- Changed :ref:`arithmetic operations <arithmetic>` ``*``, ``+``, and ``-`` of
+  types ``integer`` and ``bigint`` to throw an exception instead of rolling over
+  from positive to negative or the other way around.
 
 - Changed how columns of type :ref:`geo_point_data_type` are being communicated
   to PostgreSQL clients.
@@ -134,8 +134,8 @@ Window function extensions
 Functions and operators
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-- Added support for the :ref:`ALL <all_array_comparison>` clause for array and
-  subquery comparisons.
+- Added support for the :ref:`ALL <all_array_comparison>` operator for array
+  and subquery comparisons.
 
 - Added a :ref:`PG_GET_KEYWORDS <pg_catalog.pg_get_keywords>` table function.
 
@@ -175,7 +175,7 @@ Functions and operators
   insensitive complement to ``LIKE``.
 
 - Added support for CIDR notation comparisons through special purpose
-  operator ``<<`` associated with type IP.
+  :ref:`operator <glossary-operator>` ``<<`` associated with type IP.
 
   Statements like ``192.168.0.0 << 192.168.0.1/24`` evaluate as true,
   meaning ``SELECT ip FROM ips_table WHERE ip << 192.168.0.1/24`` returns

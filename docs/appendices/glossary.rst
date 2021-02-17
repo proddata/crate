@@ -12,7 +12,19 @@ This glossary defines key terms used in the CrateDB reference manual.
    :local:
 
 
+Terms
+=====
+
+
 .. _glossary-a:
+
+A
+-
+
+.. _glossary-argument:
+
+**Argument**
+    PLACEHOLDER TEXT
 
 
 .. _glossary-b:
@@ -20,14 +32,38 @@ This glossary defines key terms used in the CrateDB reference manual.
 
 .. _glossary-c:
 
+C
+-
+
+.. _glossary-clause:
+
+**Clause**
+    PLACEHOLDER TEXT
+
 
 .. _glossary-d:
 
 
 .. _glossary-e:
 
+E
+-
+
+.. _glossary-expression:
+
+**Expression**
+    PLACEHOLDER TEXT
+
 
 .. _glossary-f:
+
+F
+-
+
+.. _glossary-function:
+
+**Function**
+    PLACEHOLDER TEXT
 
 
 .. _glossary-g:
@@ -51,12 +87,12 @@ This glossary defines key terms used in the CrateDB reference manual.
 .. _glossary-m:
 
 M
-=
+-
 
 .. _glossary-metadata-gateway:
 
 **Metadata gateway**
-    Persists cluster meta data on disk every time the meta data changes. This
+    Persists cluster metadata on disk every time the metadata changes. This
     data is stored persistently across full cluster restarts and recovered
     after nodes are started again.
 
@@ -68,34 +104,55 @@ M
 .. _glossary-n:
 
 N
-=
+-
 
 .. _glossary-node:
 
 **Node**
     PLACEHOLDER TEXT
 
-.. _glossary-node-types:
+.. _glossary-nonscalar:
 
-**Node types**
-    PLACEHOLDER TEXT
+**Nonscalar**
+    PLACEHOLDER TEXT (see :ref:`scalar <glossary-scalar>`)
 
 
 .. _glossary-o:
 
 O
-=
+-
+
+.. _glossary-operand:
+
+**Operand**
+    PLACEHOLDER TEXT (see :ref:`operator <glossary-operator>`)
 
 .. _glossary-operator:
 
 **Operator**
-    PLACEHOLDER TEXT
+    A :ref:`reserved keyword <glossary-reserved-keyword>` (e.g., :ref:`IN
+    <sql_in_array_comparison>`) or sequence of symbols (e.g., :ref:`>=
+    <comparison-operators-basic>`) that can be used in an :ref:`SQL statement
+    <glossary-statement>` to manipulate one or more expressions and returns a
+    result (e.g., ``true`` or ``false``). This process is known as an
+    *operation* and the expressions can be called :ref:`operands
+    <glossary-operand>` or :ref:`arguments <glossary-argument>`.
+
+    .. SEEALSO::
+
+        :ref:`arithmetic`
+
+        :ref:`comparison-operators`
+
+        :ref:`sql_array_comparisons`
+
+        :ref:`sql_subquery_expressions`
 
 
 .. _glossary-p:
 
 P
-=
+-
 
 .. _glossary-primary-shard:
 
@@ -109,16 +166,26 @@ P
 .. _glossary-r:
 
 R
-=
+-
 
 .. _glossary-rebalancing:
 
 **Rebalancing**
     PLACEHOLDER TEXT
 
+.. _glossary-relation:
+
+**Relation**
+    PLACEHOLDER TEXT
+
 .. _glossary-replica-shard:
 
 **Replica shard**
+    PLACEHOLDER TEXT
+
+.. _glossary-reserved-keyword:
+
+**Reserved keyword**
     PLACEHOLDER TEXT
 
 .. _glossary-routing-column:
@@ -144,7 +211,12 @@ R
 .. _glossary-s:
 
 S
-=
+-
+
+.. _glossary-scalar:
+
+**Scalar**
+    PLACEHOLDER TEXT (see :ref:`nonscalar <glossary-nonscalar>`)
 
 .. _glossary-shard:
 
@@ -198,25 +270,37 @@ S
         :ref:`System information: Checked node settings
         <sys-node-checks-settings>`
 
+.. _glossary-statement:
+
+**Statement**
+    PLACEHOLDER TEXT
+
+.. _glossary-subquery:
+
+**Subquery**
+    PLACEHOLDER TEXT
+
 
 .. _glossary-t:
 
 
 .. _glossary-u:
 
+U
+-
+
+.. _glossary-uncorrelated-subquery:
+
+**Uncorrelated subquery**
+    A :ref:`subquery <glossary-subquery>` that does not reference any
+    :ref:`relations <glossary-relation>` in a parent :ref:`statement
+    <glossary-statement>`.
+
 
 .. _glossary-v:
 
 
 .. _glossary-w:
-
-W
-=
-
-.. _glossary-warming:
-
-**Warming**
-    PLACEHOLDER TEXT
 
 
 .. _glossary-x:

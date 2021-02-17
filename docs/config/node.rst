@@ -731,9 +731,10 @@ Queries
   | *Default:* ``8192``
   | *Runtime:* ``no``
 
-  This setting defines the maximum number of elements an array can have so
-  that the ``!= ANY()``, ``LIKE ANY()``, ``ILIKE ANY()``, ``NOT LIKE ANY()``
-  and the ``NOT ILIKE ANY()`` operators can be applied on it.
+  This setting defines the maximum number of elements an array can have so that
+  the ``!= ANY()``, ``LIKE ANY()``, ``ILIKE ANY()``, ``NOT LIKE ANY()`` and the
+  ``NOT ILIKE ANY()`` :ref:`operators <glossary-operator>` can be applied on
+  it.
 
   .. NOTE::
 

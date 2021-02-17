@@ -99,8 +99,8 @@ Changes
 
 - Added support for scalar subqueries in ``DELETE`` and ``UPDATE`` statements.
 
-- Added ``UNION ALL`` operator to produce the combined result of two or more
-  queries, e.g.:
+- Added ``UNION ALL`` :ref:`operator <glossary-operator>` to produce the
+  combined result of two or more queries, e.g.:
 
   .. code-block:: psql
 

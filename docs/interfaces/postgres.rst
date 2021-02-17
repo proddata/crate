@@ -387,10 +387,10 @@ is not supported.
 Text search functions and operators
 -----------------------------------
 
-The functions and operators provided by PostgreSQL for full-text search (see
-`PostgreSQL Fulltext Search`_) are not compatible with those provided by
-CrateDB. For more information about the built-in full-text search in CrateDB
-refer to :ref:`sql_dql_fulltext_search`.
+The functions and :ref:`operators <glossary-operator>` provided by PostgreSQL
+for full-text search (see `PostgreSQL Fulltext Search`_) are not compatible
+with those provided by CrateDB. For more information about the built-in
+full-text search in CrateDB refer to :ref:`sql_dql_fulltext_search`.
 
 If you are missing features, functions or dialect improvements and have a great
 use case for it, let us know on `Github`_. We're always improving and extending

@@ -1310,7 +1310,7 @@ Classification
 
 Certain statement types (such as ``SELECT`` statements) have additional labels
 in their classification. These labels are the names of the logical plan
-operators that are involved in the query.
+:ref:`operators <glossary-operator>` that are involved in the query.
 
 For example, the following ``UNION`` statement::
 
