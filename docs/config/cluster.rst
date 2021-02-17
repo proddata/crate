@@ -658,15 +658,12 @@ Routing allocation
   | *Runtime:*  ``yes``
   | *Allowed values:* ``all | none | primaries | replicas``
 
-  Enables/Disables rebalancing for different types of shards.
+  Enables or disables rebalancing for different types of shards:
 
-  ``all`` allows shard rebalancing for all types of shards.
-
-  ``none`` disables shard rebalancing for any types.
-
-  ``primaries`` allows shard rebalancing only for primary shards.
-
-  ``replicas`` allows shard rebalancing only for replica shards.
+  - ``all`` allows shard rebalancing for all types of shards.
+  - ``none`` disables shard rebalancing for any types.
+  - ``primaries`` allows shard rebalancing only for primary shards.
+  - ``replicas`` allows shard rebalancing only for replica shards.
 
 .. _cluster.routing.allocation.allow_rebalance:
 
@@ -675,9 +672,11 @@ Routing allocation
   | *Runtime:*  ``yes``
   | *Allowed values:* ``always | indices_primary_active | indices_all_active``
 
-  Allow to control when rebalancing will happen based on the total state of all
-  the indices shards in the cluster. Defaulting to ``indices_all_active`` to
-  reduce chatter during initial :ref:`recovery <glossary-shard-recovery>`.
+  Defines when rebalancing will happen based on the total state of all
+  the indices shards in the cluster.
+
+  Defaults to ``indices_all_active`` to reduce chatter during initial
+  :ref:`recovery <glossary-shard-recovery>`.
 
 .. _cluster.routing.allocation.cluster_concurrent_rebalance:
 
@@ -685,7 +684,7 @@ Routing allocation
   | *Default:*   ``2``
   | *Runtime:*  ``yes``
 
-  Define how many concurrent rebalancing tasks are allowed cluster wide.
+  Defines how many concurrent rebalancing tasks are allowed across all nodes.
 
 .. _cluster.routing.allocation.node_initial_primaries_recoveries:
 
@@ -693,9 +692,12 @@ Routing allocation
   | *Default:*   ``4``
   | *Runtime:*  ``yes``
 
-  Define the number of initial recoveries of primaries that are allowed per
-  node. Since most times local gateway is used, those should be fast and we can
-  handle more of those per node without creating load.
+  Defines how many concurrent primary shard recoveries are allowed on a node.
+
+  Since primary recoveries use data that is already on disk (as opposed to
+  inter-node recoveries), recovery should be fast and so this
+  setting can be higher than :ref:`node_concurrent_recoveries
+  <cluster.routing.allocation.node_concurrent_recoveries>`.
 
 .. _cluster.routing.allocation.node_concurrent_recoveries:
 
@@ -703,7 +705,7 @@ Routing allocation
   | *Default:*   ``2``
   | *Runtime:*  ``yes``
 
-  How many concurrent recoveries are allowed to happen on a node.
+  Defines how many concurrent recoveries are allowed on a node.
 
 .. _conf-routing-allocation-awareness:
 
@@ -1267,9 +1269,8 @@ Metadata
 Metadata gateway
 ................
 
-The gateway persists cluster meta data on disk every time the meta data
-changes. This data is stored persistently across full cluster restarts and
-recovered after nodes are started again.
+The following settings can be used to configure the behavior of the
+:ref:`metadata gateway <glossary-metadata-gateway>`.
 
 .. _gateway.expected_nodes:
 

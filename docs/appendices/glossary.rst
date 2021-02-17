@@ -63,16 +63,22 @@ C
 
 .. _glossary-l:
 
-L
-=
-
-.. _glossary-local-gateway:
-
-**Local gateway**
-    PLACEHOLDER TEXT
-
 
 .. _glossary-m:
+
+M
+=
+
+.. _glossary-metadata-gateway:
+
+**Metadata gateway**
+    Persists cluster meta data on disk every time the meta data changes. This
+    data is stored persistently across full cluster restarts and recovered
+    after nodes are started again.
+
+    .. SEEALSO::
+
+         :ref:`Cluster configuration: Metadata gateway <metadata_gateway>`
 
 
 .. _glossary-n:
