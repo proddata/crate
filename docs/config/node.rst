@@ -54,7 +54,7 @@ Basics
 Node types
 ==========
 
-CrateDB supports different kinds of nodes.
+CrateDB supports different types of nodes.
 
 The following settings can be used to differentiate nodes upon startup:
 
