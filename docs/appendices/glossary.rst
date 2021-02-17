@@ -28,14 +28,6 @@ A
 
 .. _glossary-c:
 
-C
-=
-
-.. _glossary-clustered-by:
-
-**Clustered by**
-    PLACEHOLDER TEXT
-
 
 .. _glossary-d:
 
