@@ -717,7 +717,7 @@ is available.
 Enabled by default.
 
 :value:
-  `true`` to enable warming up, otherwise ``false``
+  ``true`` to enable warming up, otherwise ``false``
 
 
 .. _unassigned.node_left.delayed_timeout:
