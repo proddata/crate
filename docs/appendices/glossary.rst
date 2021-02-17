@@ -14,14 +14,6 @@ This glossary defines key terms used in the CrateDB reference manual.
 
 .. _glossary-a:
 
-A
-=
-
-.. _glossary-analyzing phase:
-
-**Analyzing phase**
-    PLACEHOLDER TEXT
-
 
 .. _glossary-b:
 
