@@ -40,6 +40,10 @@ C
 **Clause**
     PLACEHOLDER TEXT
 
+.. _glossary-clustered-by-column:
+
+**CLUSTERED BY column**
+    Also known as the :ref:`routing column <glossary-routing-column>`.
 
 .. _glossary-d:
 
@@ -154,6 +158,11 @@ O
 P
 -
 
+.. _glossary-partitioned-by-col:
+
+*Partitioned by column*
+    PLACEHOLDER TEXT
+
 .. _glossary-primary-shard:
 
 **Primary shard**
@@ -193,6 +202,9 @@ R
 **Routing column**
     Values in this column are used to compute a hash which is then used to
     route the corresponding row to a specific shard.
+
+    Also known as the :ref:`CLUSTERED BY column
+    <glossary-clustered-by-column>`.
 
     .. NOTE::
 
