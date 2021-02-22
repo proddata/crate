@@ -122,7 +122,7 @@ SQL Improvements
   :ref:`ARRAY(subquery) <sql_expressions_array_subquery>` expression,
   which can turn the result from a subquery into an array.
 
-- The :ref:`= ANY <sql_dql_any_array>` :ref:`operator <glossary-operator>` now
+- The :ref:`= ANY <sql_dql_any_array>` :ref:`operator <gloss-operator>` now
   also supports operations on object arrays or nested arrays. This enables
   queries like ``WHERE ['foo', 'bar'] = ANY(object_array(string_array))``.
 

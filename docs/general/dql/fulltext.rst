@@ -100,7 +100,7 @@ Arguments
 
   By default every column is indexed but only the raw data is stored, so
   matching against a ``text`` column without a fulltext index is equivalent to
-  using the ``=`` :ref:`operator <glossary-operator>`. To perform real fulltext
+  using the ``=`` :ref:`operator <gloss-operator>`. To perform real fulltext
   searches use a :ref:`fulltext index <sql_ddl_index_fulltext>`.
 
 :boost:
@@ -243,7 +243,7 @@ See the options below for details.
   used. Defaults to ``1``.
 
 :operator:
-  Can be ``or`` or ``and``. The default :ref:`operator <glossary-operator>` is
+  Can be ``or`` or ``and``. The default :ref:`operator <gloss-operator>` is
   ``or``. It is used to combine the tokens of the ``query_term``. If ``and`` is
   used, every token from the ``query_term`` has to match. If ``or`` is used
   only the number of ``minimum_should_match`` have to match.
@@ -414,7 +414,7 @@ absolute or comparable across searches the usefulness outside of sorting is
 very limited.
 
 Although possible, filtering by the greater-than-or-equals :ref:`operator
-<glossary-operator>` (``>=``)  on the :ref:`_score
+<gloss-operator>` (``>=``)  on the :ref:`_score
 <sql_administration_system_column_score>` column would not make much sense and
 can lead to unpredictable result sets.
 

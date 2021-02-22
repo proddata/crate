@@ -427,7 +427,7 @@ Make table creation resilient to closing and full cluster crashes
 .. rubric:: Scenario
 
 Recovering a table requires a quorum of shard copies to be available to
-:ref:`allocate <glossary-shard-allocation>` a primary. This means that a
+:ref:`allocate <gloss-shard-allocation>` a primary. This means that a
 primary cannot be assigned if the cluster dies before enough shards have been
 allocated. The same happens if a table is closed before enough shard copies
 were started, making it impossible to reopen the table. Allocation IDs solve

@@ -34,7 +34,7 @@ to that table visible to subsequent commands.
 
 The ``PARTITION`` clause can be used to refresh specific partitions of a
 partitioned table instead of all partitions. The ``PARTITION`` clause requires
-a list of all :ref:`partition columns <glossary-partitioned-column>` as an
+a list of all :ref:`partition columns <gloss-partitioned-column>` as an
 argument.
 
 In case the ``PARTITION`` clause is omitted all open partitions will be
@@ -83,7 +83,7 @@ These kind of filters will result in a primary key lookup. You can use the
     EXPLAIN 1 row in set (... sec)
 
 
-This lists a ``Get`` :ref:`operator <glossary-operator>`, which is the internal
+This lists a ``Get`` :ref:`operator <gloss-operator>`, which is the internal
 operator name for a primary key lookup. Compare this with the following
 output::
 
@@ -149,14 +149,14 @@ If the table is :ref:`partitioned <partitioned-tables>`, the optional
 :value:
   The respective column value.
 
-All :ref:`partition columns <glossary-partition-column>` (specified by the
+All :ref:`partition columns <gloss-partition-column>` (specified by the
 :ref:`sql-create-table-partitioned-by` clause) must be listed inside the
 parentheses along with their respective values using the ``partition_column =
 value`` syntax (separated by commas).
 
 Because each partition corresponds to a unique set of :ref:`partition column
-<glossary-partition-column>` row values, this clause uniquely identifies a
-single partition to refresh.
+<gloss-partition-column>` row values, this clause uniquely identifies a single
+partition to refresh.
 
 .. TIP::
 

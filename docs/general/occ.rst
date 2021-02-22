@@ -60,8 +60,8 @@ and deletes.
 .. NOTE::
 
     Optimistic concurrency control only works using the ``=`` :ref:`operator
-    <glossary-operator>`, checking for the exact ``_seq_no`` and
-    ``_primary_term`` your update or delete is based on.
+    <gloss-operator>`, checking for the exact ``_seq_no`` and ``_primary_term``
+    your update or delete is based on.
 
 Optimistic update
 =================

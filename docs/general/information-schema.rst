@@ -120,8 +120,8 @@ number of replicas.
     SELECT 50 rows in set (... sec)
 
 The table also contains additional information such as the specified
-:ref:`routing column <glossary-routing-column>` and :ref:`partition columns
-<glossary-partition-column>`::
+:ref:`routing column <gloss-routing-column>` and :ref:`partition columns
+<gloss-partition-column>`::
 
     cr> SELECT table_name, clustered_by, partitioned_by
     ... FROM information_schema.tables
@@ -146,7 +146,7 @@ The table also contains additional information such as the specified
 +----------------------------------+------------------------------------------------------------------------------------+-------------+
 | ``closed``                       | The state of the table                                                             | ``BOOLEAN`` |
 +----------------------------------+------------------------------------------------------------------------------------+-------------+
-| ``clustered_by``                 | The :ref:`routing column <glossary-routing-column>` used to cluster the table      | ``TEXT``    |
+| ``clustered_by``                 | The :ref:`routing column <gloss-routing-column>` used to cluster the table         | ``TEXT``    |
 +----------------------------------+------------------------------------------------------------------------------------+-------------+
 | ``column_policy``                | Defines whether the table uses a ``STRICT`` or a ``DYNAMIC`` :ref:`column_policy`  | ``TEXT``    |
 +----------------------------------+------------------------------------------------------------------------------------+-------------+
@@ -154,7 +154,7 @@ The table also contains additional information such as the specified
 +----------------------------------+------------------------------------------------------------------------------------+-------------+
 | ``number_of_shards``             | The number of shards the table is currently distributed across                     | ``INTEGER`` |
 +----------------------------------+------------------------------------------------------------------------------------+-------------+
-| ``partitioned_by``               | The :ref:`partition columns <glossary-partition-column>` (used to partition the    | ``TEXT``    |
+| ``partitioned_by``               | The :ref:`partition columns <gloss-partition-column>` (used to partition the       | ``TEXT``    |
 |                                  | table)                                                                             |             |
 +----------------------------------+------------------------------------------------------------------------------------+-------------+
 | ``reference_generation``         | Specifies how values in the self-referencing column are generated                  | ``TEXT``    |
@@ -189,8 +189,8 @@ Table parameters can be applied with ``CREATE TABLE`` on creation of a table.
 With ``ALTER TABLE`` they can be set on already existing tables.
 
 The following statement creates a new table and sets the refresh interval of
-shards to 500 ms and sets the :ref:`shard allocation
-<glossary-shard-allocation>` for primary shards only::
+shards to 500 ms and sets the :ref:`shard allocation <gloss-shard-allocation>`
+for primary shards only::
 
     cr> create table parameterized_table (id integer, content text)
     ... with ("refresh_interval"=500, "routing.allocation.enable"='primaries');
@@ -540,8 +540,8 @@ This table can be queried to get information about all :ref:`partitioned tables
 <partitioned-tables>`, Each partition of a table is represented as one row. The
 row contains the information table name, schema name, partition ident, and the
 values of the partition. ``values`` is a key-value object with the
-:ref:`partition column <glossary-partition-column>` (or columns) as key(s) and
-the corresponding value as value(s).
+:ref:`partition column <gloss-partition-column>` (or columns) as key(s) and the
+corresponding value as value(s).
 
 .. hide:
 

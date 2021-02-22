@@ -35,7 +35,7 @@ Returns: ``text``
     +--------+
     SELECT 1 row in set (... sec)
 
-You can also use the ``||`` :ref:`operator <glossary-operator>`::
+You can also use the ``||`` :ref:`operator <gloss-operator>`::
 
     cr> select 'foo' || 'bar' AS col;
     +--------+
@@ -2100,7 +2100,7 @@ It can be used to append elements to array fields
    are made by fetching the newest version again and if they all fail, the
    query fails.
 
-You can also use the concat :ref:`operator <glossary-operator>` ``||`` with
+You can also use the concat :ref:`operator <gloss-operator>` ``||`` with
 arrays::
 
     cr> select [1,2,3] || [4,5,6] || [7,8,9] AS arr;
@@ -3004,7 +3004,7 @@ Special functions
 ----------------------
 
 The ``ignore3vl`` function operates on a boolean argument and eliminates the
-`3-valued logic`_ on the whole tree of :ref:`operators <glossary-operator>`
+`3-valued logic`_ on the whole tree of :ref:`operators <gloss-operator>`
 beneath it. More specifically, ``FALSE`` is evaluated to ``FALSE``, ``TRUE`` to
 ``TRUE`` and ``NULL`` to ``FALSE``.
 

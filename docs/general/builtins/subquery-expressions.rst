@@ -5,10 +5,9 @@
 Subquery expressions
 ====================
 
-Some :ref:`operators <glossary-operator>` can be used with an
-:ref:`uncorrelated subquery <glossary-uncorrelated-subquery>` to form a
-*subquery expression* that returns a boolean value (i.e., ``true`` or
-``false``) or ``NULL``.
+Some :ref:`operators <gloss-operator>` can be used with an :ref:`uncorrelated
+subquery <gloss-uncorrelated-subquery>` to form a *subquery expression* that
+returns a boolean value (i.e., ``true`` or ``false``) or ``NULL``.
 
 .. SEEALSO::
 
@@ -47,7 +46,7 @@ Here's an example::
     +--------+----------+-----+
     SELECT 4 rows in set (... sec)
 
-The ``IN`` :ref:`operator <glossary-operator>` returns ``true`` if any subquery
+The ``IN`` :ref:`operator <gloss-operator>` returns ``true`` if any subquery
 row equals the left-hand operand. Otherwise, it returns ``false`` (including
 the case where the subquery returns no rows).
 
@@ -94,7 +93,7 @@ Here's an example::
     +--------------+------------+
     SELECT 5 rows in set (... sec)
 
-The ``ANY`` :ref:`operator <glossary-operator>` returns ``true`` if the defined
+The ``ANY`` :ref:`operator <gloss-operator>` returns ``true`` if the defined
 comparison is ``true`` for any of the result rows of the right-hand subquery.
 
 The operator returns ``false`` if the comparison returns ``false`` for all
@@ -140,7 +139,7 @@ Here's an example::
     +------+
     SELECT 1 row in set (... sec)
 
-The ``ALL`` :ref:`operator <glossary-operator>` returns ``true`` if the defined
+The ``ALL`` :ref:`operator <gloss-operator>` returns ``true`` if the defined
 comparison is ``true`` for all of the result rows of the right-hand subquery.
 
 The operator returns ``false`` if the comparison returns ``false`` for any

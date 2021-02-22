@@ -295,7 +295,7 @@ nodes of the cluster:
   | *Runtime:*  ``yes``
 
   Defines the maximum waiting time in milliseconds for the :ref:`reallocation
-  <glossary-shard-allocation>` process to finish. The ``force`` setting will
+  <gloss-shard-allocation>` process to finish. The ``force`` setting will
   define the behaviour when the shutdown process runs into this timeout.
 
   The timeout expects a time value either as a ``bigint`` or
@@ -628,7 +628,7 @@ Routing allocation
   | *Runtime:*  ``yes``
   | *Allowed values:* ``all | none | primaries | new_primaries``
 
-  ``all`` allows all :ref:`shard allocations <glossary-shard-allocation>`, the
+  ``all`` allows all :ref:`shard allocations <gloss-shard-allocation>`, the
   cluster can allocate all kinds of shards.
 
   ``none`` allows no shard allocations at all. No shard will be moved or
@@ -647,7 +647,7 @@ Routing allocation
 .. NOTE::
 
    This allocation setting has no effect on the :ref:`recovery
-   <glossary-shard-recovery>` of primary shards! Even when
+   <gloss-shard-recovery>` of primary shards! Even when
    ``cluster.routing.allocation.enable`` is set to ``none``, nodes will recover
    their unassigned local primary shards immediatelly after restart.
 
@@ -676,7 +676,7 @@ Routing allocation
   the indices shards in the cluster.
 
   Defaults to ``indices_all_active`` to reduce chatter during initial
-  :ref:`recovery <glossary-shard-recovery>`.
+  :ref:`recovery <gloss-shard-recovery>`.
 
 .. _cluster.routing.allocation.cluster_concurrent_rebalance:
 
@@ -713,7 +713,7 @@ Awareness
 .........
 
 Cluster allocation awareness allows to configure :ref:`shard allocation
-<glossary-shard-allocation>` across generic attributes associated with nodes.
+<gloss-shard-allocation>` across generic attributes associated with nodes.
 
 .. _cluster.routing.allocation.awareness.attributes:
 
@@ -722,7 +722,7 @@ Cluster allocation awareness allows to configure :ref:`shard allocation
 
   You may define :ref:`custom node attributes <conf-node-attributes>` which can
   then be used to do awareness based on the :ref:`allocation
-  <glossary-shard-allocation>` of a shard and its replicas.
+  <gloss-shard-allocation>` of a shard and its replicas.
 
   For example, let's say we want to use an attribute named ``rack_id``. We
   start two nodes with ``node.attr.rack_id`` set to ``rack_one``. Then we
@@ -742,10 +742,9 @@ Cluster allocation awareness allows to configure :ref:`shard allocation
 **cluster.routing.allocation.awareness.force.\*.values**
   | *Runtime:*  ``no``
 
-  Attributes on which :ref:`shard allocation <glossary-shard-allocation>` will
-  be forced. Here, ``*`` is a placeholder for the awareness attribute, which
-  can be configured using the
-  :ref:`cluster.routing.allocation.awareness.attributes
+  Attributes on which :ref:`shard allocation <gloss-shard-allocation>` will be
+  forced. Here, ``*`` is a placeholder for the awareness attribute, which can
+  be configured using the :ref:`cluster.routing.allocation.awareness.attributes
   <cluster.routing.allocation.awareness.attributes>` setting.
 
   For example, let's say we configured forced shard allocation for an awareness
@@ -785,8 +784,8 @@ can bring the respective properties of each node closer together.
   | *Runtime:*  ``yes``
 
   Defines the weight factor for shards :ref:`allocated
-  <glossary-shard-allocation>` on a node (float). Raising this raises the
-  tendency to equalize the number of shards across all nodes in the cluster.
+  <gloss-shard-allocation>` on a node (float). Raising this raises the tendency
+  to equalize the number of shards across all nodes in the cluster.
 
 .. _cluster.routing.allocation.balance.index:
 
@@ -795,9 +794,9 @@ can bring the respective properties of each node closer together.
   | *Runtime:*  ``yes``
 
   Defines a factor to the number of shards per index :ref:`allocated
-  <glossary-shard-allocation>` on a specific node (float). Increasing this
-  value raises the tendency to equalize the number of shards per index across
-  all nodes in the cluster.
+  <gloss-shard-allocation>` on a specific node (float). Increasing this value
+  raises the tendency to equalize the number of shards per index across all
+  nodes in the cluster.
 
 .. _cluster.routing.allocation.balance.threshold:
 
@@ -815,7 +814,7 @@ can bring the respective properties of each node closer together.
 Cluster-wide allocation filtering
 .................................
 
-Control which shards are :ref:`allocated <glossary-shard-allocation>` to which
+Control which shards are :ref:`allocated <gloss-shard-allocation>` to which
 nodes.
 
 Filter definitions are retroactively enforced. If a filter prevents matching
@@ -830,7 +829,7 @@ addresses.
 **cluster.routing.allocation.include.***
   | *Runtime:*  ``yes``
 
-  Only :ref:`allocate shards <glossary-shard-allocation>` on nodes where one of
+  Only :ref:`allocate shards <gloss-shard-allocation>` on nodes where one of
   the specified values matches the attribute.
 
   For example::
@@ -842,8 +841,8 @@ addresses.
 **cluster.routing.allocation.exclude.***
   | *Runtime:*  ``yes``
 
-  Only :ref:`allocate shards <glossary-shard-allocation>` on nodes where none
-  of the specified values matches the attribute.
+  Only :ref:`allocate shards <gloss-shard-allocation>` on nodes where none of
+  the specified values matches the attribute.
 
   For example::
 
@@ -855,7 +854,7 @@ addresses.
   | *Runtime:*  ``yes``
 
   Used to specify a number of rules, which all MUST match for a node in order
-  to :ref:`allocate a shard  <glossary-shard-allocation>` on it. This is in
+  to :ref:`allocate a shard  <gloss-shard-allocation>` on it. This is in
   contrast to include which will include a node if ANY rule matches.
 
 
@@ -870,8 +869,8 @@ Disk-based shard allocation
   | *Default:*   ``true``
   | *Runtime:*  ``yes``
 
-  Prevent :ref:`shard allocation <glossary-shard-allocation>` on nodes
-  depending of the disk usage.
+  Prevent :ref:`shard allocation <gloss-shard-allocation>` on nodes depending
+  of the disk usage.
 
 .. _cluster.routing.allocation.disk.watermark.low:
 
@@ -880,7 +879,7 @@ Disk-based shard allocation
   | *Runtime:*  ``yes``
 
   Defines the lower disk threshold limit for :ref:`shard allocations
-  <glossary-shard-allocation>`. New shards will not be allocated on nodes with
+  <gloss-shard-allocation>`. New shards will not be allocated on nodes with
   disk usage greater than this value. It can also be set to an absolute bytes
   value (like e.g. ``500mb``) to prevent the cluster from allocating new shards
   on node with less free disk space than this value.
@@ -892,7 +891,7 @@ Disk-based shard allocation
   | *Runtime:*  ``yes``
 
   Defines the higher disk threshold limit for :ref:`shard allocations
-  <glossary-shard-allocation>`. The cluster will attempt to relocate existing
+  <gloss-shard-allocation>`. The cluster will attempt to relocate existing
   shards to another node if the disk usage on a node rises above this value. It
   can also be set to an absolute bytes value (like e.g. ``500mb``) to relocate
   shards from nodes with less free disk space than this value.
@@ -904,9 +903,8 @@ Disk-based shard allocation
   | *Runtime:*  ``yes``
 
   Defines the threshold on which CrateDB enforces a read-only block on every
-  index that has at least one :ref:`shard allocated
-  <glossary-shard-allocation>` on a node with at least one disk exceeding the
-  flood stage.
+  index that has at least one :ref:`shard allocated <gloss-shard-allocation>`
+  on a node with at least one disk exceeding the flood stage.
 
   .. NOTE::
 
@@ -941,7 +939,7 @@ nodes every 30 seconds. This can also be changed by setting the
    | *Runtime*: ``yes``
 
    Limits the number of shards that can be :ref:`allocated
-   <glossary-shard-allocation>` per node. A value of ``-1`` means unlimited.
+   <gloss-shard-allocation>` per node. A value of ``-1`` means unlimited.
 
    Setting this to ``1000``, for example, will prevent CrateDB from assigning
    more than 1000 shards per node. A node with 1000 shards would be excluded
@@ -960,7 +958,7 @@ Recovery
   | *Runtime:*  ``yes``
 
   Specifies the maximum number of bytes that can be transferred during
-  :ref:`shard recovery <glossary-shard-recovery>` per seconds. Limiting can be
+  :ref:`shard recovery <gloss-shard-recovery>` per seconds. Limiting can be
   disabled by setting it to ``0``. This setting allows to control the network
   usage of the recovery process. Higher values may result in higher network
   utilization, but also faster recovery process.
@@ -972,7 +970,7 @@ Recovery
   | *Runtime:*  ``yes``
 
   Defines the time to wait after an issue caused by cluster state syncing
-  before retrying to :ref:`recover <glossary-shard-recovery>`.
+  before retrying to :ref:`recover <gloss-shard-recovery>`.
 
 .. _indices.recovery.retry_delay_network:
 
@@ -981,7 +979,7 @@ Recovery
   | *Runtime:*  ``yes``
 
   Defines the time to wait after an issue caused by the network before retrying
-  to :ref:`recover <glossary-shard-recovery>`.
+  to :ref:`recover <gloss-shard-recovery>`.
 
 .. _indices.recovery.internal_action_timeout:
 
@@ -990,7 +988,7 @@ Recovery
   | *Runtime:*  ``yes``
 
   Defines the timeout for internal requests made as part of the :ref:`recovery
-  <glossary-shard-recovery>`.
+  <gloss-shard-recovery>`.
 
 .. _indices.recovery.internal_action_long_timeout:
 
@@ -999,7 +997,7 @@ Recovery
   | *Runtime:*  ``yes``
 
   Defines the timeout for internal requests made as part of the :ref:`recovery
-  <glossary-shard-recovery>` that are expected to take a long time. Defaults to
+  <gloss-shard-recovery>` that are expected to take a long time. Defaults to
   twice :ref:`internal_action_timeout
   <indices.recovery.internal_action_timeout>`.
 
@@ -1009,7 +1007,7 @@ Recovery
   | *Default:*  ``30m``
   | *Runtime:*  ``yes``
 
-  :ref:`Recoveries <glossary-shard-recovery>` that don't show any activity for
+  :ref:`Recoveries <gloss-shard-recovery>` that don't show any activity for
   more then this interval will fail. Defaults to
   :ref:`internal_action_long_timeout
   <indices.recovery.internal_action_long_timeout>`.
@@ -1021,7 +1019,7 @@ Recovery
   | *Runtime:*  ``yes``
 
   Controls the number of file chunk requests that can be sent in parallel per
-  :ref:`recovery <glossary-shard-recovery>`. As multiple recoveries are already
+  :ref:`recovery <gloss-shard-recovery>`. As multiple recoveries are already
   running in parallel, controlled by
   :ref:`cluster.routing.allocation.node_concurrent_recoveries
   <cluster.routing.allocation.node_concurrent_recoveries>`, increasing this
@@ -1270,7 +1268,7 @@ Metadata gateway
 ................
 
 The following settings can be used to configure the behavior of the
-:ref:`metadata gateway <glossary-metadata-gateway>`.
+:ref:`metadata gateway <gloss-metadata-gateway>`.
 
 .. _gateway.expected_nodes:
 

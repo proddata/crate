@@ -67,7 +67,7 @@ two conditions:
 First, a (primary or replica) copy of every shard of the table must be present
 on the **same** node. The user can choose the most suitable node for this
 operation and then restrict table :ref:`shard allocation
-<glossary-shard-allocation>` on that node using the :ref:`shard allocation
+<gloss-shard-allocation>` on that node using the :ref:`shard allocation
 filtering <ddl_shard_allocation>`.
 
 The second condition for decreasing a table's number of shards is to block write
@@ -197,9 +197,9 @@ Reroute shards
 ==============
 
 With the ``REROUTE`` command it is possible to control the :ref:`allocations
-<glossary-shard-allocation>` of shards. This gives you the ability to
-re-balance the cluster state manually. The supported reroute options are listed
-in the reference documentation of :ref:`ALTER TABLE REROUTE
+<gloss-shard-allocation>` of shards. This gives you the ability to re-balance
+the cluster state manually. The supported reroute options are listed in the
+reference documentation of :ref:`ALTER TABLE REROUTE
 <sql-alter-table-reroute>`.
 
 Shard rerouting can help solve several problems:

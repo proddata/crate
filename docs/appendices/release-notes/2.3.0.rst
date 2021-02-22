@@ -99,8 +99,8 @@ Changes
 
 - Added support for scalar subqueries in ``DELETE`` and ``UPDATE`` statements.
 
-- Added ``UNION ALL`` :ref:`operator <glossary-operator>` to produce the
-  combined result of two or more queries, e.g.:
+- Added ``UNION ALL`` :ref:`operator <gloss-operator>` to produce the combined
+  result of two or more queries, e.g.:
 
   .. code-block:: psql
 
@@ -138,7 +138,7 @@ Changes
   enable or disable shard rebalancing on the cluster.
 
 - Added support to manually control the :ref:`allocation of shards
-  <glossary-shard-allocation>` using ``ALTER TABLE REROUTE``. Supported
+  <gloss-shard-allocation>` using ``ALTER TABLE REROUTE``. Supported
   reroute-options are: ``MOVE``, ``ALLOCATE REPLICA``, and ``CANCEL``.
 
 - Added support to manually retry the allocation of shards that failed to

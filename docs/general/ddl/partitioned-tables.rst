@@ -22,8 +22,8 @@ more columns by which it is split into separate internal tables, called
 *partitions*.
 
 When a record with a new distinct combination of values for the configured
-:ref:`partition columns <glossary-partition-column>` is inserted, a
-new partition is created and the document will be inserted into this partition.
+:ref:`partition columns <gloss-partition-column>` is inserted, a new partition
+is created and the document will be inserted into this partition.
 
 You will end up with separate partitions under the hood that can be queried
 like a single table.
@@ -55,7 +55,7 @@ can be deleted and no expensive query is involved.
 
     Every table partition is clustered into as many shards as you configure for
     the table. Because of this, a good partition configuration depends on good
-    :ref:`shard allocation <glossary-shard-allocation>`.
+    :ref:`shard allocation <gloss-shard-allocation>`.
 
     Well tuned shard allocation is vital. Read the `sharding guide`_ to make
     sure you're getting the best performance out ot CrateDB.
@@ -182,7 +182,7 @@ Insert
     SELECT 1 row in set (... sec)
 
 On subsequent inserts with the same :ref:`partition column
-<glossary-partition-column>` values, no additional partition is created::
+<gloss-partition-column>` values, no additional partition is created::
 
     cr> INSERT INTO parted_table (id, title, width, day)
     ... VALUES (2, 'Time is an illusion, lunchtime doubly so', 0.7, '2014-04-08');
@@ -212,7 +212,7 @@ On subsequent inserts with the same :ref:`partition column
 Update
 ======
 
-:ref:`Partition columns <glossary-partition-column>` cannot be changed, because
+:ref:`Partition columns <gloss-partition-column>` cannot be changed, because
 this would necessitate moving all affected documents. Such an operation would
 not be atomic and could lead to inconsistent state::
 
@@ -286,7 +286,7 @@ as few partitions as possible based on the partitions referenced in the
 
 The ``WHERE`` clause is analyzed for partition use by checking the ``WHERE``
 conditions against the values of the :ref:`partition columns
-<glossary-partition-column>`.
+<gloss-partition-column>`.
 
 For example, the following query will only operate on the partition for
 ``day=1396915200000``:
@@ -349,7 +349,7 @@ Partitioning by generated columns
 
 Querying on tables partitioned by generated columns is optimized to infer a
 minimum list of partitions from the :ref:`partition columns
-<glossary-partition-column>` referenced in the ``WHERE`` clause:
+<gloss-partition-column>` referenced in the ``WHERE`` clause:
 
 .. Hidden: insert some stuff::
 
@@ -465,7 +465,7 @@ Altering a single partition
 ...........................
 
 We also provide the option to change the number of shards that are already
-:ref:`allocated <glossary-shard-allocation>` for an existing partition. This
+:ref:`allocated <gloss-shard-allocation>` for an existing partition. This
 option operates on a partition basis, thus a specific partition needs to be
 specified::
 

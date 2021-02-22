@@ -44,7 +44,7 @@ Performance improvements
 - Improved the performance of queries on the ``sys.health`` table.
 
 - Added support for using the optimized primary key lookup plan if additional
-  filters are combined via ``AND`` :ref:`operators <glossary-operator>`.
+  filters are combined via ``AND`` :ref:`operators <gloss-operator>`.
 
 - Improved the performance of queries on the ``sys.allocations`` table in cases
   where there are filters restricting the result set or if only a sub-set of

@@ -6,8 +6,8 @@
 Arithmetic operators
 ====================
 
-Arithmetic :ref:`operators <glossary-operator>` perform mathematical
-operations on numeric values (including timestamps):
+Arithmetic :ref:`operators <gloss-operator>` perform mathematical operations on
+numeric values (including timestamps):
 
 ========   =========================================================
 Operator   Description

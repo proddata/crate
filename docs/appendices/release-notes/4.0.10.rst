@@ -74,7 +74,7 @@ Fixes
 
 - Fixed a regression introduced in ``2.3.2`` which optimizes subqueries when
   used inside multi-value producing functions and :ref:`operators
-  <glossary-operator>` like ``IN()``, ``ANY()`` or ``ARRAY()`` by applying an
+  <gloss-operator>` like ``IN()``, ``ANY()`` or ``ARRAY()`` by applying an
   implicit ordering. When using data types (e.g. like an object: ``select
   array(select {a = col} from test)`` which do not support ordering, an NPE was
   raised.

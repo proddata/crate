@@ -19,7 +19,7 @@ Primary key
 
 The primary key constraint combines a unique constraint and a not-null
 constraint. It also defines the default :ref:`routing value
-<glossary-routing-column>` used for sharding.
+<gloss-routing-column>` used for sharding.
 
 Example::
 

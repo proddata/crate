@@ -68,7 +68,7 @@ Fixes
   containing a single item was passed as ``fractions``.
 
 - Fixed an issue which resulted in an exception when a :ref:`routing column
-  <glossary-routing-column>` was compared against a sub-query inside a
+  <gloss-routing-column>` was compared against a sub-query inside a
   ``WHERE`` clause.
 
 - Fixed a performance regression resulting in a table scan instead of a

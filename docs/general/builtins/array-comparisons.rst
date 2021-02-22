@@ -5,7 +5,7 @@
 Array comparisons
 =================
 
-An array comparison :ref:`operator <glossary-operator>` tests the relationship
+An array comparison :ref:`operator <gloss-operator>` tests the relationship
 between two arrays and returns a corresponding value of ``true``, ``false``, or
 ``NULL``.
 
@@ -39,7 +39,7 @@ Here's an example::
     +------+-------+
     SELECT 1 row in set (... sec)
 
-The ``IN`` :ref:`operator <glossary-operator>` returns ``true`` if any of the
+The ``IN`` :ref:`operator <gloss-operator>` returns ``true`` if any of the
 right-hand values matches the left-hand operand. Otherwise, it returns
 ``false`` (including the case where there are no right-hand values).
 
@@ -76,7 +76,7 @@ Here's an example::
     +------+-------+
     SELECT 1 row in set (... sec)
 
-The ``ANY`` :ref:`operator <glossary-operator>` returns ``true`` if the defined
+The ``ANY`` :ref:`operator <gloss-operator>` returns ``true`` if the defined
 comparison is ``true`` for any of the values in the right-hand array
 expression.
 
@@ -124,7 +124,7 @@ Here's an example::
     SELECT 1 row in set (... sec)
 
 
-The ``ALL`` :ref:`operator <glossary-operator>` returns ``true`` if the defined
+The ``ALL`` :ref:`operator <gloss-operator>` returns ``true`` if the defined
 comparison is ``true`` for all values in the right-hand array expression.
 
 The operator returns ``false`` if the comparison returns ``false`` for all

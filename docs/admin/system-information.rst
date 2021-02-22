@@ -799,8 +799,8 @@ Recovery expected nodes
 
 The check for the :ref:`gateway.expected_nodes <gateway.expected_nodes>`
 setting checks that the number of nodes that should be waited for the immediate
-cluster state :ref:`recovery <glossary-shard-recovery>`. This value must be
-equal to the maximum number of data and master nodes in the cluster.
+cluster state :ref:`recovery <gloss-shard-recovery>`. This value must be equal
+to the maximum number of data and master nodes in the cluster.
 
 Recovery after nodes
 ....................
@@ -814,8 +814,8 @@ nodes and equal to or less than number of nodes in the cluster.
 
   (E / 2) < R <= E
 
-Here, ``R`` is the number of :ref:`recovery <glossary-shard-recovery>` nodes
-and ``E`` is the number of expected nodes.
+Here, ``R`` is the number of :ref:`recovery <gloss-shard-recovery>` nodes and
+``E`` is the number of expected nodes.
 
 Recovery after time
 ...................
@@ -903,7 +903,7 @@ Table schema
       - Indicates if this shard is the primary shard.
       - ``BOOLEAN``
     * - ``recovery``
-      - :ref:`Recovery <glossary-shard-recovery>` statistics for a shard.
+      - :ref:`Recovery <gloss-shard-recovery>` statistics for a shard.
       - ``OBJECT``
     * - ``recovery['files']``
       - File recovery statistics
@@ -1310,7 +1310,7 @@ Classification
 
 Certain statement types (such as ``SELECT`` statements) have additional labels
 in their classification. These labels are the names of the logical plan
-:ref:`operators <glossary-operator>` that are involved in the query.
+:ref:`operators <gloss-operator>` that are involved in the query.
 
 For example, the following ``UNION`` statement::
 
@@ -1606,7 +1606,7 @@ are storing time series data for a certain retention period and intend to
 delete old data, it is possible to use the :ref:`partitioned tables
 <partitioned-tables>` to avoid reindex operations.
 
-You will have to use a :ref:`partition column <glossary-partition-column>` that
+You will have to use a :ref:`partition column <gloss-partition-column>` that
 denotes time. For example, if you have a retention period of nine months, you
 could partition a table by a ``month`` column. Then, every month, the system
 will create a new partition. This new partition is created using the active
@@ -2060,7 +2060,7 @@ Allocations
 ===========
 
 The ``sys.allocations`` table contains information about shards and their
-:ref:`allocation <glossary-shard-allocation>` state. The table contains:
+:ref:`allocation <gloss-shard-allocation>` state. The table contains:
 
 * shards that are unassigned and why they are unassigned
 * shards that are assigned but cannot be moved or rebalanced and why they

@@ -296,7 +296,7 @@ name and has following attributes:
 | ``Management``        | Thread pool statistics of the ``management`` thread     |
 |                       | pool used by management tasks like stats collecting,    |
 |                       | repository information, :ref:`shard allocations         |
-|                       | <glossary-shard-allocation>`, etc.                      |
+|                       | <gloss-shard-allocation>`, etc.                         |
 +-----------------------+---------------------------------------------------------+
 | ``Flush``             | Thread pool statistics of the ``flush`` thread pool     |
 |                       | used for fsyncing to disk and merging segments in the   |
@@ -319,7 +319,7 @@ name and has following attributes:
 +-----------------------+---------------------------------------------------------+
 | ``FetchShardStarted`` | Thread pool statistics of the ``fetch_shard_started``   |
 |                       | thread pool used on :ref:`shard allocation              |
-|                       | <glossary-shard-allocation>` .                          |
+|                       | <gloss-shard-allocation>` .                             |
 +-----------------------+---------------------------------------------------------+
 | ``FetchShardStore``   | Thread pool statistics of the ``fetch_shard_store``     |
 |                       | used on shard replication.                              |

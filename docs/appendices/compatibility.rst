@@ -133,7 +133,7 @@ These **functions** of `standard SQL`_ are either not supported or only partly s
 
 - ``IS DISTINCT FROM``
 
-- Network address functions and :ref:`operators <glossary-operator>`
+- Network address functions and :ref:`operators <gloss-operator>`
 
 - Mathematical functions
 

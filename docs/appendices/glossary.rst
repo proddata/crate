@@ -16,56 +16,56 @@ Terms
 =====
 
 
-.. _glossary-a:
+.. _gloss-a:
 
 
-.. _glossary-b:
+.. _gloss-b:
 
 
-.. _glossary-c:
+.. _gloss-c:
 
 C
 -
 
-.. _glossary-clustered-by-column:
+.. _gloss-clustered-by-column:
 
 **CLUSTERED BY column**
-    Better known as a :ref:`routing column <glossary-routing-column>`.
+    Better known as a :ref:`routing column <gloss-routing-column>`.
 
 
-.. _glossary-d:
+.. _gloss-d:
 
 
-.. _glossary-e:
+.. _gloss-e:
 
 
-.. _glossary-f:
+.. _gloss-f:
 
 
-.. _glossary-g:
+.. _gloss-g:
 
 
-.. _glossary-h:
+.. _gloss-h:
 
 
-.. _glossary-i:
+.. _gloss-i:
 
 
-.. _glossary-j:
+.. _gloss-j:
 
 
-.. _glossary-k:
+.. _gloss-k:
 
 
-.. _glossary-l:
+.. _gloss-l:
 
 
-.. _glossary-m:
+.. _gloss-m:
 
 M
 -
 
-.. _glossary-metadata-gateway:
+.. _gloss-metadata-gateway:
 
 **Metadata gateway**
     Persists cluster metadata on disk every time the metadata changes. This
@@ -77,15 +77,15 @@ M
          :ref:`Cluster configuration: Metadata gateway <metadata_gateway>`
 
 
-.. _glossary-n:
+.. _gloss-n:
 
 
-.. _glossary-o:
+.. _gloss-o:
 
 O
 -
 
-.. _glossary-operator:
+.. _gloss-operator:
 
 **Operator**
     A reserved keyword (e.g., :ref:`IN <sql_in_array_comparison>`) or sequence
@@ -105,20 +105,19 @@ O
         :ref:`sql_subquery_expressions`
 
 
-.. _glossary-p:
+.. _gloss-p:
 
 P
 -
 
-.. _glossary-partition-column:
+.. _gloss-partition-column:
 
 **Partition column**
     A column used to :ref:`partition a table <partitioned-tables>`. Specified
     by the :ref:`PARTITIONED BY clause <sql-create-table-partitioned-by>`.
 
-    Also known as a :ref:`PARTITIONED BY column
-    <glossary-partitioned-by-column>` or :ref:`partitioned column
-    <glossary-partitioned-column>`.
+    Also known as a :ref:`PARTITIONED BY column <gloss-partitioned-by-column>`
+    or :ref:`partitioned column <gloss-partitioned-column>`.
 
     A table may be partitioned by one or more columns:
 
@@ -132,9 +131,11 @@ P
 
         :ref:`partitioned-tables`
 
-        :ref:`Generated columns: Partitioning <ddl-generated-columns-partitioning>`
+        :ref:`Generated columns: Partitioning
+        <ddl-generated-columns-partitioning>`
 
-        :ref:`CREATE TABLE: PARTITIONED BY clause <sql-create-table-partitioned-by>`
+        :ref:`CREATE TABLE: PARTITIONED BY clause
+        <sql-create-table-partitioned-by>`
 
         :ref:`ALTER TABLE: PARTITION clause <sql-alter-table-partition>`
 
@@ -146,59 +147,61 @@ P
 
         :ref:`COPY FROM: PARTITION clause <sql-copy-from-partition>`
 
-        :ref:`CREATE SNAPSHOT: PARTITION clause <sql-create-snapshot-partition>`
+        :ref:`CREATE SNAPSHOT: PARTITION clause
+        <sql-create-snapshot-partition>`
 
-        :ref:`RESTORE SNAPSHOT: PARTITION clause <sql-restore-snapshot-partition>`
+        :ref:`RESTORE SNAPSHOT: PARTITION clause
+        <sql-restore-snapshot-partition>`
 
-.. _glossary-partitioned-by-column:
+.. _gloss-partitioned-by-column:
 
 **PARTITIONED BY column**
-    Better known as a :ref:`partition column <glossary-partition-column>`.
+    Better known as a :ref:`partition column <gloss-partition-column>`.
 
-.. _glossary-partitioned-column:
+.. _gloss-partitioned-column:
 
 **Partitioned column**
-    Better known as a :ref:`partition column <glossary-partition-column>`.
+    Better known as a :ref:`partition column <gloss-partition-column>`.
 
 
-.. _glossary-q:
+.. _gloss-q:
 
 
-.. _glossary-r:
+.. _gloss-r:
 
 R
 -
 
-.. _glossary-routing-column:
+.. _gloss-routing-column:
 
 **Routing column**
     Values in this column are used to compute a hash which is then used to
     route the corresponding row to a specific shard.
 
-    Also known as the :ref:`CLUSTERED BY column
-    <glossary-clustered-by-column>`.
+    Also known as the :ref:`CLUSTERED BY column <gloss-clustered-by-column>`.
 
     .. NOTE::
 
         The routing of rows to a specific shard is not the same as the routing
         of shards to a specific node (also known as :ref:`shard allocation
-        <glossary-shard-allocation>`).
+        <gloss-shard-allocation>`).
 
     .. SEEALSO::
 
-        :ref:`Storage and consistency: Addressing documents <concepts_addressing_documents>`
+        :ref:`Storage and consistency: Addressing documents
+        <concepts_addressing_documents>`
 
         :ref:`Sharding: Routing <routing>`
 
         :ref:`CREATE TABLE: CLUSTERED clause <sql-create-table-clustered>`
 
 
-.. _glossary-s:
+.. _gloss-s:
 
 S
 -
 
-.. _glossary-shard-allocation:
+.. _gloss-shard-allocation:
 
 **Shard allocation**
     The process by which CrateDB allocates shards to a specific nodes.
@@ -206,7 +209,7 @@ S
     .. NOTE::
 
         Shard allocation is also known as *shard routing*, which is not to be
-        confused with :ref:`row routing <glossary-routing-column>`.
+        confused with :ref:`row routing <gloss-routing-column>`.
 
     .. SEEALSO::
 
@@ -221,7 +224,7 @@ S
 
         :ref:`Altering tables: Reroute shards <ddl_reroute_shards>`
 
-.. _glossary-shard-recovery:
+.. _gloss-shard-recovery:
 
 **Shard recovery**
     The process by which CrateDB synchronizes a replica shard from a primary
@@ -243,30 +246,30 @@ S
         <sys-node-checks-settings>`
 
 
-.. _glossary-t:
+.. _gloss-t:
 
 
-.. _glossary-u:
+.. _gloss-u:
 
 U
 -
 
-.. _glossary-uncorrelated-subquery:
+.. _gloss-uncorrelated-subquery:
 
 **Uncorrelated subquery**
     A subquery that does not reference any relations in a parent statement.
 
 
-.. _glossary-v:
+.. _gloss-v:
 
 
-.. _glossary-w:
+.. _gloss-w:
 
 
-.. _glossary-x:
+.. _gloss-x:
 
 
-.. _glossary-y:
+.. _gloss-y:
 
 
-.. _glossary-z:
+.. _gloss-z:

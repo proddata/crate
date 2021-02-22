@@ -78,7 +78,7 @@ When hash values are distributed evenly (which will be approximately true in
 most cases), rows will be distributed evenly amongst the fixed amount of
 available shards.
 
-The :ref:`routing column <glossary-routing-column>` can be specified with the
+The :ref:`routing column <gloss-routing-column>` can be specified with the
 ``CLUSTERED BY (<column>)`` statement. If no column is specified, the
 :ref:`internal document ID <sql_administration_system_column_id>` is used.
 

@@ -241,7 +241,7 @@ accross a cluster.
      minimum value to each table or partition as default.
 
 :routing_column:
-  Specify a :ref:`routing column <glossary-routing-column>` on which basis rows
+  Specify a :ref:`routing column <gloss-routing-column>` on which basis rows
   are sharded. All rows having the same value in ``routing_column`` are stored
   in the same shard. The default is the primary key if specified, otherwise the
   internal ``_id`` column.
@@ -258,7 +258,7 @@ accross a cluster.
 
 The ``PARTITIONED`` clause splits the created table into separate
 :ref:`partitions <partitioned-tables>` for every distinct combination of row
-values in the specified :ref:`partition columns <glossary-partition-column>`.
+values in the specified :ref:`partition columns <gloss-partition-column>`.
 
 ::
 
@@ -407,7 +407,7 @@ failure, the replica copy couldn't be promoted automatically as it would lead
 to data loss since the system is aware that the replica shard didn't receive
 all writes. In such a scenario, :ref:`ALTER TABLE .. REROUTE PROMOTE REPLICA
 <alter-table-reroute-promote-replica>` can be used to force the
-:ref:`allocation <glossary-shard-recovery>` of a stale replica copy to at least
+:ref:`allocation <gloss-shard-recovery>` of a stale replica copy to at least
 recover the data that is available in the stale replica copy.
 
 Say you've a 3 node cluster and a table with 1 configured replica. With
@@ -504,7 +504,7 @@ Indicates whether soft deletes are enabled or disabled.
 
 Soft deletes allow CrateDB to preserve recent deletions within the Lucene
 index. This information is used for :ref:`shard recovery
-<glossary-shard-recovery>`.
+<gloss-shard-recovery>`.
 
 Before the introduction of soft deletes, CrateDB had to retain the information
 in the :ref:`Translog <durability>`. Using soft deletes uses less storage than
@@ -705,7 +705,7 @@ to ``REQUEST`` the flush happens after every operation.
 --------------------------------------------
 
 Controls the total number of shards (replicas and primaries) allowed to be
-:ref:`allocated <glossary-shard-allocation>` on a single node. Defaults to
+:ref:`allocated <gloss-shard-allocation>` on a single node. Defaults to
 unbounded (-1).
 
 :value:
@@ -717,8 +717,8 @@ unbounded (-1).
 ``routing.allocation.enable``
 -----------------------------
 
-Controls shard :ref:`allocation <glossary-shard-allocation>` for a specific
-table. Can be set to:
+Controls shard :ref:`allocation <gloss-shard-allocation>` for a specific table.
+Can be set to:
 
 :all:
   Allows shard allocation for all shards. (Default)
@@ -738,7 +738,7 @@ table. Can be set to:
 ``routing.allocation.max_retries``
 ----------------------------------
 
-Defines the number of attempts to :ref:`allocate <glossary-shard-allocation>` a
+Defines the number of attempts to :ref:`allocate <gloss-shard-allocation>` a
 shard before giving up and leaving the shard unallocated.
 
 :value:
@@ -793,7 +793,7 @@ comma-separated values.
 ``unassigned.node_left.delayed_timeout``
 ----------------------------------------
 
-Delay the :ref:`allocation <glossary-shard-allocation>` of replica shards which
+Delay the :ref:`allocation <gloss-shard-allocation>` of replica shards which
 have become unassigned because a node has left. It defaults to ``1m`` to give a
 node time to restart completely (which can take some time when the node has
 lots of shards). Setting the timeout to ``0`` will start allocation

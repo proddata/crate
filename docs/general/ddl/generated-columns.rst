@@ -104,7 +104,7 @@ Partitioning
 ============
 
 Generated columns can be used with the :ref:`sql-create-table-partitioned-by`
-clause to compute the :ref:`partition column <glossary-partition-column>` value
+clause to compute the :ref:`partition column <gloss-partition-column>` value
 from existing columns in the table::
 
     cr> CREATE TABLE computed_and_partitioned (

@@ -286,9 +286,9 @@ resulting row of a group by clause.
 UNION ALL
 .........
 
-The UNION ALL :ref:`operator <glossary-operator>` combines the result sets of
-two or more SELECT statements. The two SELECT statements that represent the
-direct operands of the UNION ALL must produce the same number of columns, and
+The UNION ALL :ref:`operator <gloss-operator>` combines the result sets of two
+or more SELECT statements. The two SELECT statements that represent the direct
+operands of the UNION ALL must produce the same number of columns, and
 corresponding columns must be of the same data types. The result of UNION ALL
 may contain duplicate rows. You can find :ref:`here <sql_union>` sample usage
 of UNION ALL.

@@ -358,9 +358,9 @@ Example::
     ... values ('localhost', 'not.a.real.ip');
     SQLParseException[Cannot cast `'not.a.real.ip'` of type `text` to type `ip`]
 
-IP addresses support the :ref:`operator <glossary-operator>` ``<<``, which
-checks for subnet inclusion using `CIDR notation`_. The left-hand operand must
-be of type :ref:`ip <ip-type>` and the right-hand must be of type :ref:`text
+IP addresses support the :ref:`operator <gloss-operator>` ``<<``, which checks
+for subnet inclusion using `CIDR notation`_. The left-hand operand must be of
+type :ref:`ip <ip-type>` and the right-hand must be of type :ref:`text
 <data-type-text>` (e.g., ``'192.168.1.5' << '192.168.1/24'``).
 
 .. _date-time-types:

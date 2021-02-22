@@ -34,8 +34,8 @@ A simple select::
     +----+-------------------+
     SELECT 2 rows in set (... sec)
 
-If the ``*`` :ref:`operator <glossary-operator>` is used, all columns defined
-in the schema are returned for each row::
+If the ``*`` :ref:`operator <gloss-operator>` is used, all columns defined in
+the schema are returned for each row::
 
     cr> select * from locations order by id limit 2;
     +----+-------------------+--------------+--------+----------+-------------...-+-----------+
@@ -171,7 +171,7 @@ and so on).
 Regular expressions
 -------------------
 
-:ref:`Operators <glossary-operator>` for matching using regular expressions:
+:ref:`Operators <gloss-operator>` for matching using regular expressions:
 
 .. list-table::
    :widths: 5 20 15
@@ -273,10 +273,10 @@ Examples::
 ``LIKE (ILIKE)``
 ----------------
 
-CrateDB supports the ``LIKE`` and ``ILIKE`` :ref:`operators
-<glossary-operator>`. These operators can be used to query for rows where only
-part of a columns value should match something. The only difference is that, in
-the case of ``ILIKE``, the matching is case insensitive.
+CrateDB supports the ``LIKE`` and ``ILIKE`` :ref:`operators <gloss-operator>`.
+These operators can be used to query for rows where only part of a columns
+value should match something. The only difference is that, in the case of
+``ILIKE``, the matching is case insensitive.
 
 For example to get all locations where the name starts with 'Ar' the following
 queries can be used::
@@ -465,8 +465,8 @@ CrateDB supports a variety of :ref:`array comparisons <sql_array_comparisons>`.
 ``IN``
 ------
 
-CrateDB supports the :ref:`operator <glossary-operator>` ``IN`` which allows
-you to verify the membership of the left-hand operand in a right-hand set of
+CrateDB supports the :ref:`operator <gloss-operator>` ``IN`` which allows you
+to verify the membership of the left-hand operand in a right-hand set of
 expressions. Returns ``true`` if any evaluated expression value from a
 right-hand set equals left-hand operand. Returns ``false`` otherwise::
 
@@ -496,8 +496,8 @@ The ``IN`` construct can be used in :ref:`sql_subquery_expressions` or
 ``ANY (array)``
 ---------------
 
-The ANY (or SOME) :ref:`operator <glossary-operator>` allows you to query
-elements within :ref:`arrays <sql_dql_arrays>`.
+The ANY (or SOME) :ref:`operator <gloss-operator>` allows you to query elements
+within :ref:`arrays <sql_dql_arrays>`.
 
 For example, this query returns any row where the array
 ``inhabitants['interests']`` contains a ``netball`` element::
@@ -689,8 +689,8 @@ Individual array elements can also be addressed in the :ref:`where clause
     +----------+-------------------------------------------+
     SELECT 1 row in set (... sec)
 
-When using the ``=`` :ref:`operator <glossary-operator>`, as above, the value
-of the array element at index ``n`` is compared. To compare against *any* array
+When using the ``=`` :ref:`operator <gloss-operator>`, as above, the value of
+the array element at index ``n`` is compared. To compare against *any* array
 element, see :ref:`sql_dql_any_array`.
 
 
@@ -1131,7 +1131,7 @@ The having clause is the equivalent to the where clause for the resulting rows
 of a group by clause.
 
 A simple having clause example using an equality :ref:`operator
-<glossary-operator>`::
+<gloss-operator>`::
 
     cr> select count(*), kind from locations
     ... group by kind having count(*) = 4 order by kind;

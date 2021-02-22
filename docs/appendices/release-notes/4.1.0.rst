@@ -175,7 +175,7 @@ Functions and operators
   insensitive complement to ``LIKE``.
 
 - Added support for CIDR notation comparisons through special purpose
-  :ref:`operator <glossary-operator>` ``<<`` associated with type IP.
+  :ref:`operator <gloss-operator>` ``<<`` associated with type IP.
 
   Statements like ``192.168.0.0 << 192.168.0.1/24`` evaluate as true,
   meaning ``SELECT ip FROM ips_table WHERE ip << 192.168.0.1/24`` returns
@@ -240,7 +240,7 @@ Others
   ``haasephonetik``, ``beider_morse``, and ``daitch_mokotoff``.
 
 - Removed a restriction for predicates in the ``WHERE`` clause involving
-  :ref:`partitioned columns <glossary-partitioned-column>`, which could result in
+  :ref:`partitioned columns <gloss-partitioned-column>`, which could result in
   a failure response with the message: ``logical conjunction of the conditions
   in the WHERE clause which involve partitioned columns led to a query that
   can't be executed``.

@@ -30,7 +30,7 @@ the files reside under one of the configured data directories of a node.
 
 Lucene only appends data to segment files, which means that data written to the
 disc will never be mutated. This makes it easy for replication and
-:ref:`recovery <glossary-shard-recovery>`, since syncing a shard is simply a
+:ref:`recovery <gloss-shard-recovery>`, since syncing a shard is simply a
 matter of fetching data from a specific marker.
 
 An arbitrary number of replica shards can be configured per table. Every
@@ -96,7 +96,7 @@ permanent.
 
 The translog is also directly transferred when a newly allocated replica
 initializes itself from the primary shard. There is no need to flush segments
-to disc just for replica :ref:`recovery <glossary-shard-recovery>` purposes.
+to disc just for replica :ref:`recovery <gloss-shard-recovery>` purposes.
 
 .. _concepts_addressing_documents:
 
@@ -107,8 +107,8 @@ Every document has an `internal identifier`_. By default this identifier
 is derived from the primary key. Documents living in tables without a primary
 key are assigned a unique auto-generated ID automatically when created.
 
-Each document is routed by its :ref:`routing column <glossary-routing-column>`
-to one specific shard. By default, the :ref:`internal document ID
+Each document is routed by its :ref:`routing column <gloss-routing-column>` to
+one specific shard. By default, the :ref:`internal document ID
 <sql_administration_system_column_id>` is used. However, this can be configured
 in the table schema (see `Routing`_).
 

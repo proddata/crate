@@ -126,7 +126,7 @@ Changes
   statement and release its resources.
 
 - Added support for ordering on analysed columns and :ref:`partition columns
-  <glossary-partition-column>`.
+  <gloss-partition-column>`.
 
 - Added support for views which can be created using the new ``CREATE VIEW``
   statement and dropped using the ``DROP VIEW`` statement. Views are listed in

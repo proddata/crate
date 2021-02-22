@@ -6,7 +6,7 @@
 Comparison operators
 ====================
 
-A comparison :ref:`operator <glossary-operator>` tests the relationship between
+A comparison :ref:`operator <gloss-operator>` tests the relationship between
 two values and returns a corresponding value of ``true``, ``false``, or
 ``NULL``.
 

@@ -70,7 +70,7 @@ Fixes
 
  - Fixed an issue which caused an exception if ``EXPLAIN`` is used on a
    statement that uses the ``ANY (array_expression)`` :ref:`operator
-   <glossary-operator>`.
+   <gloss-operator>`.
 
  - Allow support of conditional expressions with different return types that can
    be converted to a single return type.

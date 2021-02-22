@@ -37,7 +37,7 @@ Changes
 -------
 
  - Removed limitation which didn't allow ordering on :ref:`partition columns
-   <glossary-partition-column>` in a ``GROUP BY`` query.
+   <gloss-partition-column>` in a ``GROUP BY`` query.
 
  - Updated crate-admin to 1.0.5 which includes the following change:
 
@@ -61,7 +61,7 @@ Fixes
    snapshot to fail.
 
  - Fixed the low/high disk-based :ref:`shard allocation
-   <glossary-shard-allocation>` watermark settings. When a percentage value is
+   <gloss-shard-allocation>` watermark settings. When a percentage value is
    provided for either of settings, it won't be converted to an absolute byte
    value.
 

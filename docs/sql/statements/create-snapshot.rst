@@ -117,14 +117,14 @@ exclusively.
 :value:
   The respective column value.
 
-All :ref:`partition columns <glossary-partition-column>` (specified by the
+All :ref:`partition columns <gloss-partition-column>` (specified by the
 :ref:`sql-create-table-partitioned-by` clause) must be listed inside the
 parentheses along with their respective values using the ``partition_column =
 value`` syntax (separated by commas).
 
 Because each partition corresponds to a unique set of :ref:`partition column
-<glossary-partition-column>` row values, this clause uniquely identifies a
-single partition to snapshot.
+<gloss-partition-column>` row values, this clause uniquely identifies a single
+partition to snapshot.
 
 .. TIP::
 

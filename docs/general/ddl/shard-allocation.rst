@@ -4,7 +4,7 @@
  Shard allocation filtering
 ============================
 
-:ref:`Shard allocation <glossary-shard-allocation>` filters allows to configure
+:ref:`Shard allocation <gloss-shard-allocation>` filters allows to configure
 shard and replicas allocation per table across generic attributes associated
 with nodes.
 
@@ -23,7 +23,7 @@ Settings
 ========
 
 The following settings are dynamic, allowing tables to be :ref:`allocated
-<glossary-shard-allocation>` (when defined on table creation) or moved (when
+<gloss-shard-allocation>` (when defined on table creation) or moved (when
 defined by altering a table) from one set of nodes to another:
 
 :routing.allocation.include.{attribute}:

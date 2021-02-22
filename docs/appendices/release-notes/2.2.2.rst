@@ -54,7 +54,7 @@ Fixes
 - Fixed an issue that prevented the complete graceful shutdown of CrateDB node.
 
 - Fixed an issue that caused a ``NullPointerException`` for queries that use
-  the ``IN`` or ``ANY`` :ref:`operators <glossary-operator>` on timestamp
+  the ``IN`` or ``ANY`` :ref:`operators <gloss-operator>` on timestamp
   fields.
 
 - Improves resiliency of ``COPY FROM`` and ``INSERT FROM SUBQUERY`` statements

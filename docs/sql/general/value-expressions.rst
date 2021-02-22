@@ -80,8 +80,8 @@ Parameter references can either be unnumbered or numbered:
 Operator invocation
 ===================
 
-An :ref:`operator <glossary-operator>` can be invoked as a value expression in
-two ways:
+An :ref:`operator <gloss-operator>` can be invoked as a value expression in two
+ways:
 
 - Binary: ``expression operator expression``
 
@@ -97,7 +97,7 @@ Subscripts
 ==========
 
 A subscript expression is an expression which contains a subscript
-:ref:`operator <glossary-operator>` (``[ ]``). It can be used to access a sub
+:ref:`operator <gloss-operator>` (``[ ]``). It can be used to access a sub
 value of a composite type value.
 
 Array subscript

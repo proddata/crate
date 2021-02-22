@@ -301,8 +301,8 @@ SQL Standard and PostgreSQL compatibility improvements
   :ref:`TIMESTAMP WITH TIME ZONE <datetime-with-time-zone>` data type.
 
 - Added support for the :ref:`type 'string' <type_cast_from_string_literal>`
-  cast :ref:`operator <glossary-operator>`, which is used to initialize a
-  constant of an arbitrary type.
+  cast :ref:`operator <gloss-operator>`, which is used to initialize a constant
+  of an arbitrary type.
 
 - Added the :ref:`pg_get_userbyid` scalar function to enhance PostgreSQL
   compatibility.

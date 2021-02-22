@@ -102,14 +102,14 @@ If the table is :ref:`partitioned <partitioned-tables>`, the optional
 :value:
   The respective column value.
 
-All :ref:`partition columns <glossary-partition-column>` (specified by the
+All :ref:`partition columns <gloss-partition-column>` (specified by the
 :ref:`sql-create-table-partitioned-by` clause) must be listed inside the
 parentheses along with their respective values using the ``partition_column =
 value`` syntax (separated by commas).
 
 Because each partition corresponds to a unique set of :ref:`partition column
-<glossary-partition-column>` row values, this clause uniquely identifies a
-single partition to alter.
+<gloss-partition-column>` row values, this clause uniquely identifies a single
+partition to alter.
 
 .. TIP::
 
@@ -145,7 +145,7 @@ Using ``RESET`` will reset the parameter to its default value.
 
 The supported parameters are listed in the :ref:`CREATE TABLE WITH CLAUSE
 <sql-create-table-with>` documentation. In addition to those, for dynamically
-changing the number of :ref:`allocated shards <glossary-shard-allocation>`, the
+changing the number of :ref:`allocated shards <gloss-shard-allocation>`, the
 parameter ``number_of_shards`` can be used. For more more info on that, see
 :ref:`alter-shard-number`.
 
@@ -197,10 +197,9 @@ this operation the shards of the table will become temporarily unavailable.
 -----------
 
 The ``REROUTE`` command provides various options to manually control the
-:ref:`allocation of shards <glossary-shard-allocation>`. It allows the
-enforcement of explicit allocations, cancellations and the moving of shards
-between nodes in a cluster. See :ref:`ddl_reroute_shards` to get the convenient
-use-cases.
+:ref:`allocation of shards <gloss-shard-allocation>`. It allows the enforcement
+of explicit allocations, cancellations and the moving of shards between nodes
+in a cluster. See :ref:`ddl_reroute_shards` to get the convenient use-cases.
 
 The rowcount defines if the reroute or allocation process of a shard was
 acknowledged or rejected.
@@ -262,6 +261,6 @@ where ``reroute_option`` is::
   error out.
 
 **CANCEL**
-  This cancels the allocation or :ref:`recovery <glossary-shard-recovery>` of a
+  This cancels the allocation or :ref:`recovery <gloss-shard-recovery>` of a
   ``shard_id`` of a ``table_ident`` on a given ``node``. The ``allow_primary``
   flag indicates if it is allowed to cancel the allocation of a primary shard.

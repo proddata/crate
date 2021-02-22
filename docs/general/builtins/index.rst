@@ -7,7 +7,7 @@ Built-in functions and operators
 ================================
 
 This chapter provides an overview of built-in functions and :ref:`operators
-<glossary-operator>`.
+<gloss-operator>`.
 
 .. rubric:: Table of contents
 
