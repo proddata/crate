@@ -26,8 +26,21 @@ A
 **Argument**
     PLACEHOLDER TEXT
 
+.. _glossary-atomic:
+
+**Atomic**
+    PLACEHOLDER TEXT
+
 
 .. _glossary-b:
+
+B
+-
+
+.. _glossary-blob:
+
+**BLOB**
+    PLACEHOLDER TEXT
 
 
 .. _glossary-c:
@@ -43,9 +56,28 @@ C
 .. _glossary-clustered-by-column:
 
 **CLUSTERED BY column**
-    Also known as the :ref:`routing column <glossary-routing-column>`.
+    Better known as a :ref:`routing column <glossary-routing-column>`.
+
+.. _glossary-column:
+
+**Column**
+    PLACEHOLDER TEXT
+
+.. _glossary-constraint:
+
+**Constraint**
+    PLACEHOLDER TEXT
+
 
 .. _glossary-d:
+
+D
+-
+
+.. _glossary-document:
+
+**Document**
+    PLACEHOLDER TEXT
 
 
 .. _glossary-e:
@@ -72,11 +104,29 @@ F
 
 .. _glossary-g:
 
+.. _glossary-generated-column:
+
+**Generated column**
+    PLACEHOLDER TEXT
+
+.. _glossary-generation-expression:
+
+**Generation expression**
+    PLACEHOLDER TEXT
+
 
 .. _glossary-h:
 
 
 .. _glossary-i:
+
+I
+-
+
+.. _glossary-inconsistent-state:
+
+**Inconsistent state**
+    PLACEHOLDER TEXT
 
 
 .. _glossary-j:
@@ -158,9 +208,64 @@ O
 P
 -
 
-.. _glossary-partitioned-by-col:
+.. _glossary-partition:
 
-*Partitioned by column*
+**Partition**
+    PLACEHOLDER TEXT
+
+.. _glossary-partition-column:
+
+**Partition column**
+    A column used to :ref:`partition a table <partitioned-tables>`. Specified
+    by the :ref:`PARTITIONED BY clause <sql-create-table-partitioned-by>`.
+
+    Also known as a :ref:`PARTITIONED BY column
+    <glossary-partitioned-by-column>` or :ref:`partitioned column
+    <glossary-partitioned-column>`.
+
+    A table may be partitioned by one or more columns:
+
+    - If a table is partitioned by one column, a new partition is created for
+      every unique value in that partition column
+
+    - If a table is partitoned by multiple columns, a new partition is created
+      for every unique combination of row values in those partition columns
+
+    .. SEEALSO::
+
+        :ref:`partitioned-tables`
+
+        :ref:`Generated columns: Partitioning <ddl-generated-columns-partitioning>`
+
+        :ref:`CREATE TABLE: PARTITIONED BY clause <sql-create-table-partitioned-by>`
+
+        :ref:`ALTER TABLE: PARTITION clause <sql-alter-table-partition>`
+
+        :ref:`REFRESH: PARTITION clause <sql-refresh-partition>`
+
+        :ref:`OPTIMIZE: PARTITION clause <sql-optimize-partition>`
+
+        :ref:`COPY TO: PARTITION clause <sql-copy-to-partition>`
+
+        :ref:`COPY FROM: PARTITION clause <sql-copy-from-partition>`
+
+        :ref:`CREATE SNAPSHOT: PARTITION clause <sql-create-snapshot-partition>`
+
+        :ref:`RESTORE SNAPSHOT: PARTITION clause <sql-restore-snapshot-partition>`
+
+.. _glossary-partitioned-by-column:
+
+**PARTITIONED BY column**
+    Better known as a :ref:`partition column <glossary-partition-column>`.
+
+.. _glossary-partitioned-column:
+
+**Partitioned column**
+    Better known as a :ref:`partition column <glossary-partition-column>`.
+
+.. _glossary-primary-key:
+
+**Primary key**
     PLACEHOLDER TEXT
 
 .. _glossary-primary-shard:
@@ -218,7 +323,18 @@ R
 
         :ref:`Sharding: Routing <routing>`
 
-        :ref:`CREATE TABLE: CLUSTERED clause <ref_clustered_clause>`
+        :ref:`CREATE TABLE: CLUSTERED clause <sql-create-table-clustered>`
+
+.. _glossary-row:
+
+**Row**
+    PLACEHOLDER TEXT
+
+.. _glossary-row-values:
+
+**Row values**
+    PLACEHOLDER TEXT
+
 
 .. _glossary-s:
 

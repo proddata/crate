@@ -1546,7 +1546,7 @@ Current Checks
 Number of partitions
 ....................
 
-This check warns if any :ref:`partitioned table <partitioned_tables>` has more
+This check warns if any :ref:`partitioned table <partitioned-tables>` has more
 than 1000 partitions to detect the usage of a high cardinality field for
 partitioning.
 
@@ -1603,18 +1603,18 @@ Avoiding reindex using partitioned tables
 
 Reindexing tables is an expensive operation which can take a long time. If you
 are storing time series data for a certain retention period and intend to
-delete old data, it is possible to use the :ref:`partitioned_tables` feature to
-avoid reindex operations.
+delete old data, it is possible to use the :ref:`partitioned tables
+<partitioned-tables>` to avoid reindex operations.
 
-You will have to partition a table by a column that denotes time. For example,
-if you have a retention period of nine months, you could partition a table by a
-``month`` column. Then, every month, the system will create a new partition.
-This new partition is created using the active CrateDB version and is
-compatible with the next major CrateDB version. Now to achieve your goal of
-avoiding a reindex, you must manually delete any partition older than nine
-months. If you do that, then after nine months you rolled through all
-partitions and the remaining nine are compatible with the next major CrateDB
-version.
+You will have to use a :ref:`partition column <glossary-partition-column>` that
+denotes time. For example, if you have a retention period of nine months, you
+could partition a table by a ``month`` column. Then, every month, the system
+will create a new partition. This new partition is created using the active
+CrateDB version and is compatible with the next major CrateDB version. Now to
+achieve your goal of avoiding a reindex, you must manually delete any partition
+older than nine months. If you do that, then after nine months you rolled
+through all partitions and the remaining nine are compatible with the next
+major CrateDB version.
 
 
 How to reindex

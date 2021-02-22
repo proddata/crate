@@ -36,8 +36,8 @@ Changelog
 Changes
 -------
 
- - Removed limitation which didn't allow ordering on partitioned columns in a
-   ``GROUP BY`` query.
+ - Removed limitation which didn't allow ordering on :ref:`partition columns
+   <glossary-partition-column>` in a ``GROUP BY`` query.
 
  - Updated crate-admin to 1.0.5 which includes the following change:
 

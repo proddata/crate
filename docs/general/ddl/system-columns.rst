@@ -41,16 +41,16 @@ _primary_term
   example, if a primary is isolated in a minority partition, a possible up to
   date replica shard on the majority partition will be promoted to be the new
   primary shard and continue to process write operations, subject to the
-  :ref:`sql_ref_write_wait_for_active_shards` setting. When this partition
-  heals we need a reliable way to know that the operations that come from the
-  other shard are from an old primary and, equally, the operations that we send
-  to the shard re-joining the cluster are from the newer primary. The cluster
-  needs to have a consensus on which shards are the current serving primaries.
-  In order to achieve this we use the primary terms which are generational
-  counters that are incremented when a primary is promoted. Used in conjunction
-  with :ref:`_seq_no <sql_administration_system_columns_seq_no>` we can obtain
-  a total order of operations across shards and
-  `Optimistic Concurrency Control`_.
+  :ref:`sql-create-table-write-wait-for-active-shards` setting. When this
+  partition heals we need a reliable way to know that the operations that come
+  from the other shard are from an old primary and, equally, the operations
+  that we send to the shard re-joining the cluster are from the newer primary.
+  The cluster needs to have a consensus on which shards are the current serving
+  primaries. In order to achieve this we use the primary terms which are
+  generational counters that are incremented when a primary is promoted. Used
+  in conjunction with :ref:`_seq_no <sql_administration_system_columns_seq_no>`
+  we can obtain a total order of operations across shards and `Optimistic
+  Concurrency Control`_.
 
 .. _sql_administration_system_column_score:
 

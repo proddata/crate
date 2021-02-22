@@ -147,7 +147,7 @@ view with an optional alias::
 
 .. SEEALSO::
 
-    :ref:`ref-create-table`
+    :ref:`sql-create-table`
 
     :ref:`ref-create-view`
 

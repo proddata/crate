@@ -12,7 +12,7 @@ Sharding
 Introduction
 ============
 
-Every table partition (see :ref:`partitioned_tables`) is split into a
+Every table partition (see :ref:`partitioned-tables`) is split into a
 configured number of shards. Shards are then distributed across the cluster. As
 nodes are added to the cluster, CrateDB will move shards around to achieve
 maximum possible distribution.
@@ -45,15 +45,15 @@ Example::
     CREATE OK, 1 row affected (... sec)
 
 If the number of shards is not defined explicitly, the sensible default value
-is applied, (see :ref:`ref_clustered_clause`).
+is applied, (see :ref:`sql-create-table-clustered`).
 
 .. NOTE::
 
    The number of shards :ref:`can be changed <alter-shard-number>` after table
    creation, providing the value is a multiple of
-   :ref:`number_of_routing_shards <sql_ref_number_of_routing_shards>` (set at
-   table-creation time). Altering the number of shards will put the table into
-   a read-only state until the operation has completed.
+   :ref:`number_of_routing_shards <sql-create-table-number-of-routing-shards>`
+   (set at table-creation time). Altering the number of shards will put the
+   table into a read-only state until the operation has completed.
 
 .. CAUTION::
 

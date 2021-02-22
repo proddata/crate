@@ -120,7 +120,7 @@ for instance::
     cr> alter table my_table set ("blocks.write" = false);
     ALTER OK, -1 rows affected (... sec)
 
-Read :ref:`Alter Partitioned Tables <partitioned_tables_alter>` to see how to
+Read :ref:`Alter Partitioned Tables <partitioned-alter>` to see how to
 alter parameters of partitioned tables.
 
 Adding columns
@@ -177,7 +177,7 @@ clause::
 
 .. NOTE::
 
-    This setting is *not* the same as :ref:`table-settings-blocks.read_only`.
+    This setting is *not* the same as :ref:`sql-create-table-blocks-read-only`.
     Closing and opening a table will preserve these settings if they are
     already set.
 
@@ -200,7 +200,7 @@ With the ``REROUTE`` command it is possible to control the :ref:`allocations
 <glossary-shard-allocation>` of shards. This gives you the ability to
 re-balance the cluster state manually. The supported reroute options are listed
 in the reference documentation of :ref:`ALTER TABLE REROUTE
-<alter_table_reroute>`.
+<sql-alter-table-reroute>`.
 
 Shard rerouting can help solve several problems:
 

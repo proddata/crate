@@ -140,7 +140,7 @@ SQL Improvements
 - Functions like :ref:`CURRENT_SCHEMA <scalar_current_schema>` and
   :ref:`CURRENT_USER <current_user>` which depend on the
   active session can now be used as
-  :ref:`generated columns <sql-ddl-generated-columns>`.
+  :ref:`generated columns <ddl-generated-columns>`.
 
 - Added support for using :ref:`table functions <ref-table-functions>` in the
   select list of a query.
@@ -189,11 +189,11 @@ Database Administration
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 - Added support for changing the number of shards on an existing table or
-  partition using the :ref:`ALTER TABLE SET <alter_table_set_reset>`
+  partition using the :ref:`ALTER TABLE SET <sql-alter-table-set-reset>`
   statement.
 
-- Improved resiliency of the :ref:`ALTER TABLE RENAME <alter_table_rename>`
-  operation by making it an atomic operation.
+- Improved resiliency of the :ref:`ALTER TABLE: RENAME TO
+  <sql-alter-table-rename-to>` operation by making it an atomic operation.
 
 - Added an :ref:`ALTER CLUSTER SWAP TABLE <alter_cluster_swap_table>`
   statement that can be used to switch the names of two tables.

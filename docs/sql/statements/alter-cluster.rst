@@ -37,9 +37,9 @@ Arguments
 ------------------------
 
 The index setting :ref:`routing.allocation.max_retries
-<routing.allocation.max_retries>` indicates the maximum of attempts to
-:ref:`allocate a shard <glossary-shard-allocation>` on a node. If this limit is
-reached it leaves the shard unallocated.
+<sql-create-table-routing-allocation-max-retries>` indicates the maximum of
+attempts to :ref:`allocate a shard <glossary-shard-allocation>` on a node. If
+this limit is reached it leaves the shard unallocated.
 
 This command allows the enforcement to retry the allocation of shards which
 failed to allocate. See :ref:`ddl_reroute_shards` to get convenient use-cases.

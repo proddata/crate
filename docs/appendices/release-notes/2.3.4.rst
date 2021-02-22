@@ -53,7 +53,8 @@ Fixes
   will obey the type precedence (eg. long > integer).
 
 - Fixed an issue that caused incorrect results to be returned when a ``WHERE``
-  clause filters on a partitioned and an non-partitioned column. E.g.::
+  clause filters on a :ref:`partition column <glossary-partition-column>`
+  and a non partition column. E.g.::
 
     SELECT * FROM t WHERE parted_col='value' AND other_col='some_value'
 

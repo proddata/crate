@@ -7,7 +7,7 @@ Data types
 ==========
 
 Data can be stored in different formats. CrateDB has different types that can
-be specified if a table is created using the the :ref:`ref-create-table`
+be specified if a table is created using the the :ref:`sql-create-table`
 statement. Data types play a central role as they limit what kind of data can
 be inserted, how it is stored and they also influence the behaviour when the
 records are queried.
@@ -896,8 +896,8 @@ Alternatively a `WKT`_ string can be used to represent a geo_shape as well::
 
     It is not possible to detect a geo_shape type for a dynamically created
     column. Like with :ref:`geo_point_data_type` type, geo_shape columns need
-    to be created explicitly using either :ref:`ref-create-table` or
-    :ref:`ref-alter-table`.
+    to be created explicitly using either :ref:`sql-create-table` or
+    :ref:`sql-alter-table`.
 
 .. _object_data_type:
 

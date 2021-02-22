@@ -63,7 +63,7 @@ time they will become consistent.
 
 For example, you know a row has been written as soon as you get the ``INSERT
 OK`` message. But that row might not be read back by a subsequent ``SELECT`` on
-a different node until after a :ref:`table refresh <sql_ref_refresh>` (which
+a different node until after a :ref:`table refresh <sql-refresh>` (which
 typically occurs within one second).
 
 Your applications should be designed to work this storage and consistency model.

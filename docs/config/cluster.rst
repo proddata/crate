@@ -317,7 +317,7 @@ nodes of the cluster:
 Bulk operations
 ---------------
 
-SQL DML Statements involving a huge amount of rows like :ref:`copy_from`,
+SQL DML Statements involving a huge amount of rows like :ref:`sql-copy-from`,
 :ref:`ref-insert` or :ref:`ref-update` can take an enormous amount of time and
 resources. The following settings change the behaviour of those queries.
 
@@ -914,7 +914,7 @@ Disk-based shard allocation
       disk space is freed and the threshold is undershot. To remove the block,
       execute ``ALTER TABLE ... SET ("blocks.read_only_allow_delete" = FALSE)``
       for affected tables (see
-      :ref:`table-settings-blocks.read_only_allow_delete`).
+      :ref:`sql-create-table-blocks-read-only-allow-delete`).
 
 ``cluster.routing.allocation.disk.watermark`` settings may be defined as
 percentages or bytes values. However, it is not possible to mix the value

@@ -73,10 +73,10 @@ SQL and PostgreSQL compatibility improvements
   compatible type name notation with ``[]`` suffixes for arrays, instead of
   ``_array``.
 
-- Added the ``delimiter`` option for :ref:`copy_from` CSV files. The option is
-  used to specify the character that separates columns within a row.
+- Added the ``delimiter`` option for :ref:`sql-copy-from` CSV files. The option
+  is used to specify the character that separates columns within a row.
 
-- Added the ``empty_string_as_null`` option for :ref:`copy_from` CSV files.
+- Added the ``empty_string_as_null`` option for :ref:`sql-copy-from` CSV files.
   If the option is enabled, all column's values represented by an empty string,
   including a quoted empty string, are set to ``NULL``.
 

@@ -343,7 +343,7 @@ SQL dialect and standard SQL is defined in
 
 CrateDB does not support the distinct sub-protocol that is used to serve
 ``COPY`` operations and provides another implementation for transferring bulk
-data using the :ref:`copy_from` and :ref:`copy_to` statements.
+data using the :ref:`sql-copy-from` and :ref:`sql-copy-to` statements.
 
 Objects
 -------

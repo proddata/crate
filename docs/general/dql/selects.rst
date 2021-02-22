@@ -70,7 +70,7 @@ based upon. Can be a single table, many tables, a view, a :ref:`JOIN
 Tables and views are referenced by schema and table name and can optionally be
 aliased.  If the relation ``t`` is only referenced by name, CrateDB assumes the
 relation ``doc.t`` was meant. Schemas that were newly created using
-:ref:`ref-create-table` must be referenced explicitly.
+:ref:`sql-create-table` must be referenced explicitly.
 
 The two following queries are equivalent::
 
