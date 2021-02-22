@@ -18,29 +18,8 @@ Terms
 
 .. _glossary-a:
 
-A
--
-
-.. _glossary-argument:
-
-**Argument**
-    PLACEHOLDER TEXT
-
-.. _glossary-atomic:
-
-**Atomic**
-    PLACEHOLDER TEXT
-
 
 .. _glossary-b:
-
-B
--
-
-.. _glossary-blob:
-
-**BLOB**
-    PLACEHOLDER TEXT
 
 
 .. _glossary-c:
@@ -48,85 +27,28 @@ B
 C
 -
 
-.. _glossary-clause:
-
-**Clause**
-    PLACEHOLDER TEXT
-
 .. _glossary-clustered-by-column:
 
 **CLUSTERED BY column**
     Better known as a :ref:`routing column <glossary-routing-column>`.
 
-.. _glossary-column:
-
-**Column**
-    PLACEHOLDER TEXT
-
-.. _glossary-constraint:
-
-**Constraint**
-    PLACEHOLDER TEXT
-
 
 .. _glossary-d:
-
-D
--
-
-.. _glossary-document:
-
-**Document**
-    PLACEHOLDER TEXT
 
 
 .. _glossary-e:
 
-E
--
-
-.. _glossary-expression:
-
-**Expression**
-    PLACEHOLDER TEXT
-
 
 .. _glossary-f:
 
-F
--
-
-.. _glossary-function:
-
-**Function**
-    PLACEHOLDER TEXT
-
 
 .. _glossary-g:
-
-.. _glossary-generated-column:
-
-**Generated column**
-    PLACEHOLDER TEXT
-
-.. _glossary-generation-expression:
-
-**Generation expression**
-    PLACEHOLDER TEXT
 
 
 .. _glossary-h:
 
 
 .. _glossary-i:
-
-I
--
-
-.. _glossary-inconsistent-state:
-
-**Inconsistent state**
-    PLACEHOLDER TEXT
 
 
 .. _glossary-j:
@@ -157,40 +79,20 @@ M
 
 .. _glossary-n:
 
-N
--
-
-.. _glossary-node:
-
-**Node**
-    PLACEHOLDER TEXT
-
-.. _glossary-nonscalar:
-
-**Nonscalar**
-    PLACEHOLDER TEXT (see :ref:`scalar <glossary-scalar>`)
-
 
 .. _glossary-o:
 
 O
 -
 
-.. _glossary-operand:
-
-**Operand**
-    PLACEHOLDER TEXT (see :ref:`operator <glossary-operator>`)
-
 .. _glossary-operator:
 
 **Operator**
-    A :ref:`reserved keyword <glossary-reserved-keyword>` (e.g., :ref:`IN
-    <sql_in_array_comparison>`) or sequence of symbols (e.g., :ref:`>=
-    <comparison-operators-basic>`) that can be used in an :ref:`SQL statement
-    <glossary-statement>` to manipulate one or more expressions and returns a
+    A reserved keyword (e.g., :ref:`IN <sql_in_array_comparison>`) or sequence
+    of symbols (e.g., :ref:`>= <comparison-operators-basic>`) that can be used
+    in an SQL statement to manipulate one or more expressions and returns a
     result (e.g., ``true`` or ``false``). This process is known as an
-    *operation* and the expressions can be called :ref:`operands
-    <glossary-operand>` or :ref:`arguments <glossary-argument>`.
+    *operation* and the expressions can be called operands or arguments.
 
     .. SEEALSO::
 
@@ -207,11 +109,6 @@ O
 
 P
 -
-
-.. _glossary-partition:
-
-**Partition**
-    PLACEHOLDER TEXT
 
 .. _glossary-partition-column:
 
@@ -263,16 +160,6 @@ P
 **Partitioned column**
     Better known as a :ref:`partition column <glossary-partition-column>`.
 
-.. _glossary-primary-key:
-
-**Primary key**
-    PLACEHOLDER TEXT
-
-.. _glossary-primary-shard:
-
-**Primary shard**
-    PLACEHOLDER TEXT
-
 
 .. _glossary-q:
 
@@ -281,26 +168,6 @@ P
 
 R
 -
-
-.. _glossary-rebalancing:
-
-**Rebalancing**
-    PLACEHOLDER TEXT
-
-.. _glossary-relation:
-
-**Relation**
-    PLACEHOLDER TEXT
-
-.. _glossary-replica-shard:
-
-**Replica shard**
-    PLACEHOLDER TEXT
-
-.. _glossary-reserved-keyword:
-
-**Reserved keyword**
-    PLACEHOLDER TEXT
 
 .. _glossary-routing-column:
 
@@ -325,37 +192,16 @@ R
 
         :ref:`CREATE TABLE: CLUSTERED clause <sql-create-table-clustered>`
 
-.. _glossary-row:
-
-**Row**
-    PLACEHOLDER TEXT
-
-.. _glossary-row-values:
-
-**Row values**
-    PLACEHOLDER TEXT
-
 
 .. _glossary-s:
 
 S
 -
 
-.. _glossary-scalar:
-
-**Scalar**
-    PLACEHOLDER TEXT (see :ref:`nonscalar <glossary-nonscalar>`)
-
-.. _glossary-shard:
-
-**Shard**
-    PLACEHOLDER TEXT
-
 .. _glossary-shard-allocation:
 
 **Shard allocation**
-    The process by which CrateDB allocates :ref:`shards <glossary-shard>` to a
-    specific :ref:`nodes <glossary-node>`.
+    The process by which CrateDB allocates shards to a specific nodes.
 
     .. NOTE::
 
@@ -378,15 +224,13 @@ S
 .. _glossary-shard-recovery:
 
 **Shard recovery**
-    The process by which CrateDB synchronizes a :ref:`replica shard
-    <glossary-replica-shard>` from a :ref:`primary shard
-    <glossary-primary-shard>`.
+    The process by which CrateDB synchronizes a replica shard from a primary
+    shard.
 
-    Shard recovery can happen during :ref:`node <glossary-node>` startup, after
-    node failure, when :ref:`replicating <replication>` a primary shard, when
-    moving a shard to another node (i.e., when :ref:`rebalancing
-    <glossary-rebalancing>` the cluster), or during :ref:`snapshot restoration
-    <snapshot-restore>`.
+    Shard recovery can happen during node startup, after node failure, when
+    :ref:`replicating <replication>` a primary shard, when moving a shard to
+    another node (i.e., when rebalancing the cluster), or during :ref:`snapshot
+    restoration <snapshot-restore>`.
 
     A shard that is being recovered cannot be queried until the recovery
     process is complete.
@@ -397,16 +241,6 @@ S
 
         :ref:`System information: Checked node settings
         <sys-node-checks-settings>`
-
-.. _glossary-statement:
-
-**Statement**
-    PLACEHOLDER TEXT
-
-.. _glossary-subquery:
-
-**Subquery**
-    PLACEHOLDER TEXT
 
 
 .. _glossary-t:
@@ -420,9 +254,7 @@ U
 .. _glossary-uncorrelated-subquery:
 
 **Uncorrelated subquery**
-    A :ref:`subquery <glossary-subquery>` that does not reference any
-    :ref:`relations <glossary-relation>` in a parent :ref:`statement
-    <glossary-statement>`.
+    A subquery that does not reference any relations in a parent statement.
 
 
 .. _glossary-v:
